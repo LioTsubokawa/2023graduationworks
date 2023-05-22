@@ -44,7 +44,7 @@ function setup() {
 
 // }
 
-
+console.log("Image clicked!")
 
 function mousePressed(){
     if (mouseX >= imgX && mouseX <= imgX + imgWidth && mouseY >=imgY && imgY + imgHeight){
@@ -53,7 +53,6 @@ function mousePressed(){
     
 }
 
-console.log("Image clicked!")
 
 function draw() {
     let randIndex = int(random(images.length));

@@ -7,6 +7,8 @@ let numImages = 200;
 let clickPositions = [];
 
 
+
+
 function preload() {
 
     for(let i = 0; i < imgCount; i++){

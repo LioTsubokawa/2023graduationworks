@@ -61,7 +61,7 @@ function draw() {
 
     for(let i = 0; i < numImages; i++){
         let pos = positions[i];
-        image(pos.img,pos.x,pos.y,images[randIndex].width/50,images[randIndex].height/50);
+        image(pos.img,pos.x,pos.y,images[randIndex].width/40,images[randIndex].height/40);
     }
 
     for(let i =0; i <clickPositions.length - 1 ; i++){

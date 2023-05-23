@@ -6,13 +6,16 @@ let numImages = 200;
 
 let clickPositions = [];
 
-
+let imgWidth = 0;
+let imgHeight = 0;
 
 
 function preload() {
 
     for(let i = 0; i < imgCount; i++){
         images[i] = loadImage('star' + i + '.png')
+
+        img = loadImage('stargradation.png')
     }
 
 }
@@ -47,10 +50,20 @@ function setup() {
 console.log("Image clicked!")
 
 function mousePressed(){
-    if (mouseX >= imgX && mouseX <= imgX + imgWidth && mouseY >=imgY && imgY + imgHeight){
-        clickPositions.push({x:mouseX, y:mouseY});
+    for(let i = 0; i < numImages; i++){
+        const pos = positions[i];
+
+        if(
+            mouseX >= pos.x &&
+            mouseX <= pos.x + imgWidth &&
+            mouseY >= pos.y &&
+            mouseY <= pos.y + imgHeight
+        ){
+            clickPositions.push({x:mouseX, y:mouseY});
+        }
     }
-    
+    imgX = mouseX;
+    imgY = mouseY;
 }
 
 
@@ -58,10 +71,14 @@ function draw() {
     let randIndex = int(random(images.length));
 
     // stroke(233,232,65);
+    //０番目の画像の大きさの基準にする
+    imgWidth = images[0].width /40;
+    imgHeight = images[0].height /40;
+
 
     for(let i = 0; i < numImages; i++){
         let pos = positions[i];
-        image(pos.img,pos.x,pos.y,images[randIndex].width/40,images[randIndex].height/40);
+        image(pos.img, pos.x, pos.y, images[randIndex].width / 40,images[randIndex].height / 40);
     }
 
     for(let i =0; i <clickPositions.length - 1 ; i++){
@@ -70,7 +87,7 @@ function draw() {
         line(startPos.x, startPos.y, endPos.x, endPos.y);
         stroke(233,232,65);
     }
-    
+    image(img, imgX, imgY);
 }
 
 

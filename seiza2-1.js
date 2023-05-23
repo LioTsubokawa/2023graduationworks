@@ -4,10 +4,19 @@ let imgCount = 5;
 let positions =[];
 let numImages = 200;
 
-let clickPositions = [];
+let clickPositions = [[]];
 
 let imgWidth = 0;
 let imgHeight = 0;
+
+let img;
+let imgX = 0;
+let imgY = 0;
+
+
+//星が選ばれたらtrue、選ばれてなかったらfalse。
+let selected =false;
+
 
 
 function preload() {
@@ -15,7 +24,7 @@ function preload() {
     for(let i = 0; i < imgCount; i++){
         images[i] = loadImage('star' + i + '.png')
 
-        img = loadImage('stargradation.png')
+        img = loadImage('stargradation3.png')
     }
 
 }
@@ -50,17 +59,27 @@ function setup() {
 console.log("Image clicked!")
 
 function mousePressed(){
+    selected = false;
     for(let i = 0; i < numImages; i++){
         const pos = positions[i];
 
+        //星が選ばれているか？
         if(
             mouseX >= pos.x &&
             mouseX <= pos.x + imgWidth &&
             mouseY >= pos.y &&
             mouseY <= pos.y + imgHeight
         ){
-            clickPositions.push({x:mouseX, y:mouseY});
+            //星がクリックされたらここが動く。
+            clickPositions[clickPositions.length - 1].push({x:mouseX, y:mouseY});
+            //星が選ばれたらtrue
+            console.log('星が選ばれました。')
+            //falseをtrueにする。
+            selected = true;
         }
+    }
+    if(selected === false){
+        clickPositions.push([]);
     }
     imgX = mouseX;
     imgY = mouseY;
@@ -68,6 +87,7 @@ function mousePressed(){
 
 
 function draw() {
+    background(29,46,92);
     let randIndex = int(random(images.length));
 
     // stroke(233,232,65);
@@ -78,18 +98,26 @@ function draw() {
 
     for(let i = 0; i < numImages; i++){
         let pos = positions[i];
-        image(pos.img, pos.x, pos.y, images[randIndex].width / 40,images[randIndex].height / 40);
+        image(pos.img, pos.x, pos.y, images[randIndex].width / 25,images[randIndex].height / 25);
     }
 
-    for(let i =0; i <clickPositions.length - 1 ; i++){
-        let startPos = clickPositions[i];
-        let endPos = clickPositions[i + 1];
-        line(startPos.x, startPos.y, endPos.x, endPos.y);
-        stroke(233,232,65);
+    for(let i =0; i <clickPositions.length  ; i++){
+        let abc = clickPositions[i];
+        // var abc = [clickPositions];
+        for(let j =0; j <abc.length - 1 ; j++){
+            console.log(abc[j])
+            
+            let startPos = abc[j];
+            let endPos = abc[j + 1];
+            line(startPos.x, startPos.y, endPos.x, endPos.y);
+            stroke(233,232,65);
+        }
     }
-    image(img, imgX, imgY);
+    if(selected === true){
+        image(img, (imgX-(img.width/30)), (imgY-(img.height/30)), img.width / 15, img.height / 15);
+    }
+    // image(img, imgX, imgY, img.width / 40, img.height / 40);
 }
-
 
 
 

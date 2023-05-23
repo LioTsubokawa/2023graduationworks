@@ -6,7 +6,8 @@ let numImages = 200;
 
 let clickPositions = [];
 
-
+let imgWidth = 0;
+let imgHeight = 0;
 
 
 function preload() {
@@ -47,10 +48,18 @@ function setup() {
 console.log("Image clicked!")
 
 function mousePressed(){
-    if (mouseX >= imgX && mouseX <= imgX + imgWidth && mouseY >=imgY && imgY + imgHeight){
-        clickPositions.push({x:mouseX, y:mouseY});
+    for(let i = 0; i < numImages; i++){
+        const pos = positions[i];
+        
+        if (
+          mouseX >= pos.x &&
+          mouseX <= pos.x + imgWidth &&
+          mouseY >= pos.y &&
+          mouseY <= pos.y + imgHeight
+        ) {
+          clickPositions.push({ x: mouseX, y: mouseY });
+        }
     }
-    
 }
 
 
@@ -59,9 +68,13 @@ function draw() {
 
     // stroke(233,232,65);
 
+    // 0 番目の画像を大きさの基準にする
+    imgWidth = images[0].width / 40;
+    imgHeight = images[0].height / 40;
+
     for(let i = 0; i < numImages; i++){
         let pos = positions[i];
-        image(pos.img,pos.x,pos.y,images[randIndex].width/40,images[randIndex].height/40);
+        image(pos.img, pos.x, pos.y, images[randIndex].width / 40, images[randIndex].height / 40);
     }
 
     for(let i =0; i <clickPositions.length - 1 ; i++){

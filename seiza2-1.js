@@ -13,6 +13,10 @@ let img;
 let imgX = 0;
 let imgY = 0;
 
+// const time1 = 10000;
+const currentTime = 13000;
+const time = 10000;
+let x = 0;
 
 //星が選ばれたらtrue、選ばれてなかったらfalse。
 let selected =false;
@@ -87,7 +91,23 @@ function mousePressed(){
 
 
 function draw() {
-    background(29,46,92);
+
+    const currentTime = millis();
+    let from = color(29,46,92);
+    let to = color(153, 198, 250);
+    let interA = lerpColor(from, to, currentTime/time);
+    background(interA);
+    
+    console.log(currentTime/time)
+    if (currentTime > time) {
+        print('timeを過ぎた');
+        // x -= 0.5;
+    }
+
+    
+    
+    // background(29,46,92);
+
     let randIndex = int(random(images.length));
 
     // stroke(233,232,65);
@@ -116,7 +136,30 @@ function draw() {
     if(selected === true){
         image(img, (imgX-(img.width/30)), (imgY-(img.height/30)), img.width / 15, img.height / 15);
     }
-    // image(img, imgX, imgY, img.width / 40, img.height / 40);
+
+    image(img, imgX, imgY, img.width / 40, img.height / 40);
+    // const currentTime = millis();
+    // background(204);
+    // let from = color(29,46,92);
+    // let to = color(153, 198, 250);
+    // let interA = lerpColor(from, to, currentTime/time);
+    // background(interA);
+    
+    // console.log(currentTime/time)
+    // if (currentTime > time) {
+    //     print('timeを過ぎた');
+    //     // x -= 0.5;
+    // }
+
+    // let from = color(29,46,92);
+    // let to = color(153, 198, 250);
+    // let interA = lerpColor(from, to, currentTime/time);
+    // background(interA);
+    // else if (currentTime > time1) {
+    //     print('time1を過ぎた');
+    //     // x += 2;
+    // }
+    
 }
 
 

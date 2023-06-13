@@ -1,0 +1,498 @@
+body{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+html{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+main{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+}
+
+canvas{
+    display: block;
+}
+
+.outer {
+    display: flex;
+  }
+   
+ul {
+    list-style: none;
+    padding: 0;
+  }
+
+
+.a-button {
+    background-image: url('button/a.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+} 
+  
+.i-button {
+    background-image: url('button/i.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+} 
+
+.u-button {
+    background-image: url('button/u.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+} 
+
+.e-button {
+    background-image: url('button/e.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+} 
+
+.o-button {
+    background-image: url('button/o.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ka-button {
+    background-image: url('button/ka.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ki-button {
+    background-image: url('button/ki.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ku-button {
+    background-image: url('button/ku.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ke-button {
+    background-image: url('button/ke.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ko-button {
+    background-image: url('button/ko.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.sa-button {
+    background-image: url('button/sa.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.si-button {
+    background-image: url('button/si.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.su-button {
+    background-image: url('button/su.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.se-button {
+    background-image: url('button/se.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.so-button {
+    background-image: url('button/so.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ta-button {
+    background-image: url('button/ta.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ti-button {
+    background-image: url('button/ti.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.tu-button {
+    background-image: url('button/tu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.te-button {
+    background-image: url('button/te.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.to-button {
+    background-image: url('button/to.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.na-button {
+    background-image: url('button/na.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ni-button {
+    background-image: url('button/ni.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.nu-button {
+    background-image: url('button/nu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ne-button {
+    background-image: url('button/ne.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.no-button {
+    background-image: url('button/no.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ha-button {
+    background-image: url('button/ha.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.hi-button {
+    background-image: url('button/hi.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.hu-button {
+    background-image: url('button/hu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.he-button {
+    background-image: url('button/he.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ho-button {
+    background-image: url('button/ho.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ma-button {
+    background-image: url('button/ma.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.mi-button {
+    background-image: url('button/mi.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.mu-button {
+    background-image: url('button/mu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.me-button {
+    background-image: url('button/me.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.mo-button {
+    background-image: url('button/mo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ya-button {
+    background-image: url('button/ya.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.yu-button {
+    margin-top: 110%;
+    background-image: url('button/yu.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.yo-button {
+    margin-top: 110%;
+    background-image: url('button/yo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ra-button {
+    background-image: url('button/ra.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ri-button {
+    background-image: url('button/ri.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ru-button {
+    background-image: url('button/ru.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.re-button {
+    background-image: url('button/re.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.ro-button {
+    background-image: url('button/ro.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.wa-button {
+    background-image: url('button/wa.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.wo-button {
+    margin-top: 110%;
+    background-image: url('button/wo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.n-button {
+    margin-top: 110%;
+    background-image: url('button/nn.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.mojikesi-button {
+    background-image: url('button/mojikesi.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 74px;
+    height: 53px;
+    border: none;
+}
+
+.dakuten-button {
+    background-image: url('button/daku.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.handakuten-button {
+    background-image: url('button/handaku.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
+.komoji-button {
+    background-image: url('button/komoji.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 135px;
+    height: 62px;
+    border: none;
+}
+
+.kettei-button {
+    margin-top: 215%;
+    background-image: url('button/kettei.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 115px;
+    height: 82px;
+    border: none;
+}

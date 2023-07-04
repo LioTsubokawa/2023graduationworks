@@ -185,9 +185,19 @@ buttonlist.forEach((button) => {
     // ボタンがクリックされたときのイベントハンドラを設定します
     button.addEventListener('click', function(e) {
         const value = e.currentTarget.value;
-        // コンソールログにメッセージを出力します
+
+        if (value === 'もじけし'){
+            // コンソールログにメッセージを出力します
         console.log(value);
-        input.value = ((input.value) +value);
+        input.value = input.value.slice(0, -1);
+
+        }else{
+            // コンソールログにメッセージを出力します
+        console.log(value);
+        input.value = ((input.value) + value);
+        }
+
+        
     });
 });
 

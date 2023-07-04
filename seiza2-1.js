@@ -87,26 +87,28 @@ function mousePressed(){
     }
     imgX = mouseX;
     imgY = mouseY;
+
+    // console.log(mouseX,mouseY);
 }
 
 
 function draw() {
 
-    const currentTime = millis();
-    let from = color(29,46,92);
-    let to = color(153, 198, 250);
-    let interA = lerpColor(from, to, currentTime/time);
-    background(interA);
+    // const currentTime = millis();
+    // let from = color(29,46,92);
+    // let to = color(153, 198, 250);
+    // let interA = lerpColor(from, to, currentTime/time);
+    // background(interA);
     
-    console.log(currentTime/time)
-    if (currentTime > time) {
-        print('timeを過ぎた');
-        // x -= 0.5;
-    }
+    // console.log(currentTime/time)
+    // if (currentTime > time) {
+    //     print('timeを過ぎた');
+    //     // x -= 0.5;
+    // }
 
     
     
-    // background(29,46,92);
+    background(29,46,92);
 
     let randIndex = int(random(images.length));
 
@@ -163,5 +165,29 @@ function draw() {
 }
 
 
+const input = document.querySelector("#myInput");
 
+console.log(input);
+
+
+// ボタン要素を取得します
+const buttonlist = document.querySelectorAll('.js-button');
+
+// ボタンがクリックされたときのイベントハンドラを設定します
+// button.addEventListener('click', function() {
+//   // コンソールログにメッセージを出力します
+//   console.log('ボタンがクリックされました');
+// });
+
+// const highlightedItems = userList.querySelectorAll(".highlighted");
+
+buttonlist.forEach((button) => {
+    // ボタンがクリックされたときのイベントハンドラを設定します
+    button.addEventListener('click', function(e) {
+        const value = e.currentTarget.value;
+        // コンソールログにメッセージを出力します
+        console.log(value);
+        input.value = ((input.value) +value);
+    });
+});
 

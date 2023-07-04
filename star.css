@@ -1,9 +1,44 @@
-body{
+.app-body {
     background-color:antiquewhite;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+    position: relative;
+}
+
+.ripple{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: none;
+    border-radius: 50%;
+    /* background-color: #ffffff; */
+    background: rgb(255,255,255);
+    background: linear-gradient
+                (90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 35%, rgba(255,255,255,0) 100%);
+    z-index: 5;
+    pointer-events: none;
+  
+    animation-name: rippleEffect;
+    animation-duration: .5s;
+    animation-fill-mode:none;
+  }
+  
+  @keyframes rippleEffect {
+    0% {
+        opacity:1;
+        width: 0px;
+        height: 0px;
+        border: none;
+    }
+
+    40% {
+      opacity: .3;
+    }
+
+    100% {
+      opacity:0;
+      width: 100px;
+      height: 100px;
+      transform:translateX(-50px) translateY(-50px);
+    }
 }
 
 html{

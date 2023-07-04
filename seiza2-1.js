@@ -23,12 +23,16 @@ let selected =false;
 
 
 
+
+
 function preload() {
 
     for(let i = 0; i < imgCount; i++){
         images[i] = loadImage('star' + i + '.png')
 
-        img = loadImage('stargradation3.png')
+         img = loadImage('stargradation3.png')
+
+        
     }
 
 }
@@ -48,6 +52,18 @@ function setup() {
          }
     }
     //noLoop();
+
+    const body = document.getElementById('js-body');
+
+    body.addEventListener('click', (e) => {
+        const { currentTarget } = e; // currentTarget は、この場合 body 要素
+
+        console.log(currentTarget.getBoundingClientRect());
+        
+        const x = window.scrollX + e.clientX;
+        const y = window.scrollY + e.clientY;
+        currentTarget.insertAdjacentHTML('afterbegin', '<span class="ripple" style="left: ' + (x) + 'px; top: ' + (y) + 'px;"></span>');
+    });
 
 }
 
@@ -201,3 +217,6 @@ buttonlist.forEach((button) => {
     });
 });
 
+// document.getElementById('js-button').addEventListener('click', (ev) => {
+//     document.getElementById('js-button').insertAdjacentHTML('afterbegin', '<span class="ripple" style="left: ' + (ev.offsetX) + 'px; top: ' + (ev.offsetY) + 'px;"></span>');
+// })

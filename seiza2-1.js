@@ -17,7 +17,7 @@ let imgY = 0;
 //タイマーの秒数は指定したい秒数×１０００で書く。
 const currentTime = 13000;
 //実質、timeがタイマーの役割。
-const time = 20000;
+const time = 10000;
 let x = 0;
 
 //星が選ばれたらtrue、選ばれてなかったらfalse。
@@ -118,10 +118,12 @@ function draw() {
     let interA = lerpColor(from, to, currentTime/time);
     background(interA);
     
+    
     // console.log(currentTime/time)
     if (currentTime > time) {
         print('timeを過ぎた');
         // x -= 0.5;
+
     }
 
     

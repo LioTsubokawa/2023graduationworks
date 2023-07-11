@@ -288,27 +288,32 @@ buttonlist.forEach((button) => {
                     input.value = input.value + 'ど';
                     break;
 
-                case 'は' || 'ぱ':
+                case 'は':
+                case 'ぱ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ば';
                     break;
 
-                case 'ひ' || 'ぴ':
+                case 'ひ':
+                case 'ぴ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'び';
                     break;
 
-                case 'ふ' || 'ぷ':
+                case 'ふ':
+                case 'ぷ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぶ';
                     break;
 
-                case 'へ' || 'ぺ':
+                case 'へ':
+                case 'ぺ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'べ';
                     break;
 
-                case 'ほ' || 'ぽ':
+                case 'ほ':
+                case 'ぽ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぼ';
                     break;
@@ -322,29 +327,34 @@ buttonlist.forEach((button) => {
         }else if (value === 'はんだくてん'){
             //入力されている最後の文字に濁点の文字があるか
             switch (input.value.slice(-1)) {
-                case 'は' || 'ば':
+                case 'は':
+                case 'ば':
                     //入力されている文字の末尾を削除する
                     input.value = input.value.slice(0, -1);
                     //新しく文字を入力させる。
                     input.value = input.value + 'ぱ';
                     break;
 
-                case 'ひ' || 'び':
+                case 'ひ':
+                case 'び':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぴ';
                     break;
                 
-                case 'ふ' || 'ぶ':
+                case 'ふ':
+                case 'ぶ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぷ';
                     break;
 
-                case 'へ' || 'べ':
+                case 'へ':
+                case 'べ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぺ';
                     break;
 
-                case 'ほ' || 'ぼ':
+                case 'ほ':
+                case 'ぼ':
                     input.value = input.value.slice(0, -1);
                     input.value = input.value + 'ぽ';
                     break;

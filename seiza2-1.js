@@ -14,8 +14,10 @@ let imgX = 0;
 let imgY = 0;
 
 // const time1 = 10000;
+//タイマーの秒数は指定したい秒数×１０００で書く。
 const currentTime = 13000;
-const time = 10000;
+//実質、timeがタイマーの役割。
+const time = 20000;
 let x = 0;
 
 //星が選ばれたらtrue、選ばれてなかったらfalse。
@@ -124,7 +126,7 @@ function draw() {
 
     
     
-    background(29,46,92);
+    // background(29,46,92);
 
     let randIndex = int(random(images.length));
 

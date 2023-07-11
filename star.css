@@ -523,6 +523,15 @@ ul {
     border: none;
 }
 
+.nobasi-button {
+    background-image: url('button/nobasi.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 62px;
+    border: none;
+}
+
 .kettei-button {
     margin-top: 215%;
     background-image: url('button/kettei.png');

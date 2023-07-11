@@ -38,7 +38,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth,windowHeight);
+    c = createCanvas(windowWidth,windowHeight);
     background(29,46,92);
     for(let i = 0; i < numImages; i++){
         let randIndex = int(random(images.length));
@@ -203,10 +203,222 @@ buttonlist.forEach((button) => {
         const value = e.currentTarget.value;
 
         if (value === 'もじけし'){
+            //「ち」「つ」にも濁点つくよ。
             // コンソールログにメッセージを出力します
         console.log(value);
         input.value = input.value.slice(0, -1);
 
+        }else if (value === 'だくてん'){
+            //入力されている最後の文字に濁点の文字があるか
+            switch (input.value.slice(-1)) {
+                case 'か':
+                    //入力されている文字の末尾を削除する
+                    input.value = input.value.slice(0, -1);
+                    //新しく文字を入力させる。
+                    input.value = input.value + 'が';
+                    break;
+
+                case 'き':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぎ';
+                    break;
+
+                case 'く':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぐ';
+                    break;
+
+                case 'け':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'げ';
+                    break;
+
+                case 'こ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ご';
+                    break;
+
+                case 'さ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ざ';
+                    break;
+
+                case 'し':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'じ';
+                    break;
+
+                case 'す':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ず';
+                    break;
+
+                case 'せ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぜ';
+                    break;
+
+                case 'そ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぞ';
+                    break;
+
+                case 'た':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'だ';
+                    break;
+
+                case 'ち':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぢ';
+                    break;
+
+                case 'つ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'づ';
+                    break;
+
+                case 'て':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'で';
+                    break;
+
+                case 'と':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ど';
+                    break;
+
+                case 'は' || 'ぱ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ば';
+                    break;
+
+                case 'ひ' || 'ぴ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'び';
+                    break;
+
+                case 'ふ' || 'ぷ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぶ';
+                    break;
+
+                case 'へ' || 'ぺ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'べ';
+                    break;
+
+                case 'ほ' || 'ぽ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぼ';
+                    break;
+                
+                default:
+                  console.log('default');
+              }
+              
+            console.log(value);
+            
+        }else if (value === 'はんだくてん'){
+            //入力されている最後の文字に濁点の文字があるか
+            switch (input.value.slice(-1)) {
+                case 'は' || 'ば':
+                    //入力されている文字の末尾を削除する
+                    input.value = input.value.slice(0, -1);
+                    //新しく文字を入力させる。
+                    input.value = input.value + 'ぱ';
+                    break;
+
+                case 'ひ' || 'び':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぴ';
+                    break;
+                
+                case 'ふ' || 'ぶ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぷ';
+                    break;
+
+                case 'へ' || 'べ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぺ';
+                    break;
+
+                case 'ほ' || 'ぼ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぽ';
+                    break;
+
+                
+                default:
+                  console.log('default');
+              }
+              
+            console.log(value);
+            
+        }else if (value === 'こもじ'){
+            //入力されている最後の文字に濁点の文字があるか
+            switch (input.value.slice(-1)) {
+                case 'あ':
+                    //入力されている文字の末尾を削除する
+                    input.value = input.value.slice(0, -1);
+                    //新しく文字を入力させる。
+                    input.value = input.value + 'ぁ';
+                    break;
+
+                case 'い':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぃ';
+                    break;
+                
+                case 'う':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぅ';
+                    break;
+
+                case 'え':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぇ';
+                    break;
+
+                case 'お':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ぉ';
+                    break;
+
+                case 'つ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'っ';
+                    break;
+
+                case 'や':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ゃ';
+                    break;
+
+                case 'ゆ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ゅ';
+                    break;
+
+                case 'よ':
+                    input.value = input.value.slice(0, -1);
+                    input.value = input.value + 'ょ';
+                    break;
+
+                
+                default:
+                  console.log('default');
+              }
+              
+            console.log(value);
+            
+        }else if (value === 'けってい'){
+            //入力されている最後の文字に濁点の文字があるか
+            saveCanvas(c, ((input.value) + '座'), 'png');
+              
+            console.log(value);
+            
         }else{
             // コンソールログにメッセージを出力します
         console.log(value);
@@ -220,3 +432,11 @@ buttonlist.forEach((button) => {
 // document.getElementById('js-button').addEventListener('click', (ev) => {
 //     document.getElementById('js-button').insertAdjacentHTML('afterbegin', '<span class="ripple" style="left: ' + (ev.offsetX) + 'px; top: ' + (ev.offsetY) + 'px;"></span>');
 // })
+
+
+//ｓキーを押すと画像をpngで保存する。
+// function keyPressed() {
+//     if (key == 's') {
+//         saveCanvas(c, ((input.value) + '座'), 'png');
+//     }
+// }

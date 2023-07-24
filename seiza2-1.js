@@ -129,6 +129,22 @@ function draw() {
 
     }
 
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // console.log(currentTime/time)
+    if (currentTime > time) {
+        print('timeを過ぎた');
+        // idが"myElement"の要素を取得
+        const myElement = document.getElementById("starname_2");
+        // x -= 0.5;
+
+    }
+        
+      
+        // // 要素の内容をコンソールに表示
+        // console.log(myElement.textContent);
+      });
+
     
     
     // background(29,46,92);

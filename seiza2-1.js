@@ -13,6 +13,8 @@ let img;
 let imgX = 0;
 let imgY = 0;
 
+let canvas;
+
 // const time1 = 10000;
 //タイマーの秒数は指定したい秒数×１０００で書く。
 const currentTime = 13000;
@@ -40,7 +42,8 @@ function preload() {
 }
 
 function setup() {
-    c = createCanvas(windowWidth,windowHeight);
+    canvas = createCanvas(windowWidth,windowHeight);
+    canvas.parent('js-canvas-container');
     background(29,46,92);
     for(let i = 0; i < numImages; i++){
         let randIndex = int(random(images.length));
@@ -429,7 +432,7 @@ buttonlist.forEach((button) => {
             
         }else if (value === 'けってい'){
             //入力されている最後の文字に濁点の文字があるか
-            saveCanvas(c, ((input.value) + '座'), 'png');
+            saveCanvas(canvas, ((input.value) + '座'), 'png');
               
             console.log(value);
             

@@ -1,3 +1,6 @@
+const keyboard = document.querySelector('#js-keyboard');
+const input = document.querySelector('#myInput');
+
 let images = [];
 let imgCount = 5;
 
@@ -17,9 +20,13 @@ let canvas;
 
 // const time1 = 10000;
 //タイマーの秒数は指定したい秒数×１０００で書く。
-const currentTime = 13000;
+let startTime = 0;
+// 経過時間
+let elapsedTime = 0;
 //実質、timeがタイマーの役割。
-const time = 10000;
+const createTimer = 10000; // 星座を作る時間 10 秒
+const inputTimer = createTimer + 10000; // 名前を作る時間 10 秒
+// let time = 10000;
 let x = 0;
 
 //星が選ばれたらtrue、選ばれてなかったらfalse。
@@ -114,99 +121,95 @@ function mousePressed(){
 
 
 function draw() {
+  let from = color(29, 46, 92);
+  let to = color(153, 198, 250);
 
-    const currentTime = millis();
-    let from = color(29,46,92);
-    let to = color(153, 198, 250);
-    let interA = lerpColor(from, to, currentTime/time);
-    background(interA);
-    
-    
-    // console.log(currentTime/time)
-    if (currentTime > time) {
-        print('timeを過ぎた');
-        // x -= 0.5;
+  // 経過時間
+  elapsedTime = millis() - startTime;
 
+  let interA = lerpColor(from, to, elapsedTime / createTimer);
+  background(interA);
+
+  if (elapsedTime > inputTimer) {
+    // 名前を作る時間が終わった時の処理
+    keyboard.classList.remove('keyboard-show');
+    // 名前をリセット
+    input.value = '';
+    // タイマーをリセット
+    startTime = millis();
+    // ここで画像を送る処理をする
+  } else if (elapsedTime > createTimer) {
+    // 星座を作る時間が終わった時の処理
+    keyboard.classList.add('keyboard-show');
+  }
+
+  // background(29,46,92);
+
+  let randIndex = int(random(images.length));
+
+  // stroke(233,232,65);
+  //０番目の画像の大きさの基準にする
+  imgWidth = images[0].width / 40;
+  imgHeight = images[0].height / 40;
+
+  for (let i = 0; i < numImages; i++) {
+    let pos = positions[i];
+    image(
+      pos.img,
+      pos.x,
+      pos.y,
+      images[randIndex].width / 25,
+      images[randIndex].height / 25
+    );
+  }
+
+  for (let i = 0; i < clickPositions.length; i++) {
+    let abc = clickPositions[i];
+    // var abc = [clickPositions];
+    for (let j = 0; j < abc.length - 1; j++) {
+      console.log(abc[j]);
+
+      let startPos = abc[j];
+      let endPos = abc[j + 1];
+      line(startPos.x, startPos.y, endPos.x, endPos.y);
+      stroke(233, 232, 65);
     }
+  }
+  if (selected === true) {
+    image(
+      img,
+      imgX - img.width / 30,
+      imgY - img.height / 30,
+      img.width / 15,
+      img.height / 15
+    );
+  }
 
-    document.addEventListener("DOMContentLoaded", function() {
+//   image(img, imgX, imgY, img.width / 40, img.height / 40);
+  
+  // const currentTime = millis();
+  // background(204);
+  // let from = color(29,46,92);
+  // let to = color(153, 198, 250);
+  // let interA = lerpColor(from, to, currentTime/time);
+  // background(interA);
 
-        // console.log(currentTime/time)
-    if (currentTime > time) {
-        print('timeを過ぎた');
-        // idが"myElement"の要素を取得
-        const myElement = document.getElementById("starname_2");
-        // x -= 0.5;
+  // console.log(currentTime/time)
+  // if (currentTime > time) {
+  //     print('timeを過ぎた');
+  //     // x -= 0.5;
+  // }
 
-    }
-        
-      
-        // // 要素の内容をコンソールに表示
-        // console.log(myElement.textContent);
-      });
-
-    
-    
-    // background(29,46,92);
-
-    let randIndex = int(random(images.length));
-
-    // stroke(233,232,65);
-    //０番目の画像の大きさの基準にする
-    imgWidth = images[0].width /40;
-    imgHeight = images[0].height /40;
-
-
-    for(let i = 0; i < numImages; i++){
-        let pos = positions[i];
-        image(pos.img, pos.x, pos.y, images[randIndex].width / 25,images[randIndex].height / 25);
-    }
-
-    for(let i =0; i <clickPositions.length  ; i++){
-        let abc = clickPositions[i];
-        // var abc = [clickPositions];
-        for(let j =0; j <abc.length - 1 ; j++){
-            console.log(abc[j])
-            
-            let startPos = abc[j];
-            let endPos = abc[j + 1];
-            line(startPos.x, startPos.y, endPos.x, endPos.y);
-            stroke(233,232,65);
-        }
-    }
-    if(selected === true){
-        image(img, (imgX-(img.width/30)), (imgY-(img.height/30)), img.width / 15, img.height / 15);
-    }
-
-    image(img, imgX, imgY, img.width / 40, img.height / 40);
-    // const currentTime = millis();
-    // background(204);
-    // let from = color(29,46,92);
-    // let to = color(153, 198, 250);
-    // let interA = lerpColor(from, to, currentTime/time);
-    // background(interA);
-    
-    // console.log(currentTime/time)
-    // if (currentTime > time) {
-    //     print('timeを過ぎた');
-    //     // x -= 0.5;
-    // }
-
-    // let from = color(29,46,92);
-    // let to = color(153, 198, 250);
-    // let interA = lerpColor(from, to, currentTime/time);
-    // background(interA);
-    // else if (currentTime > time1) {
-    //     print('time1を過ぎた');
-    //     // x += 2;
-    // }
-    
+  // let from = color(29,46,92);
+  // let to = color(153, 198, 250);
+  // let interA = lerpColor(from, to, currentTime/time);
+  // background(interA);
+  // else if (currentTime > time1) {
+  //     print('time1を過ぎた');
+  //     // x += 2;
+  // }
 }
 
-
-const input = document.querySelector("#myInput");
-
-console.log(input);
 
 
 // ボタン要素を取得します

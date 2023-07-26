@@ -32,7 +32,8 @@ let x = 0;
 //星が選ばれたらtrue、選ばれてなかったらfalse。
 let selected =false;
 
-
+let cx, cy;
+let secondsRadius;
 
 
 
@@ -76,6 +77,12 @@ function setup() {
         const y = window.scrollY + e.clientY;
         currentTarget.insertAdjacentHTML('afterbegin', '<span class="ripple" style="left: ' + (x) + 'px; top: ' + (y) + 'px;"></span>');
     });
+
+    let radius = min(width, height) / 5;
+    secondsRadius = radius * 0.9;
+
+    cx = width / 2;
+    cy = height / 2;
 
 }
 
@@ -208,10 +215,25 @@ if (selected === true) {
   //     print('time1を過ぎた');
   //     // x += 2;
   // }
+
+
+
+  //タイマーの表示。
+  //↓横線
+  noStroke();
+  fill(230,230,230);
+  rect(10, windowHeight-20, windowWidth, 10);
+  //バーの上の●表示
+  noStroke();
+  fill(255,192,135);
+  circle(30/2,windowHeight-15, 25);
+
+  
+  
+  
 }
 
-
-
+  
 // ボタン要素を取得します
 const buttonlist = document.querySelectorAll('.js-button');
 

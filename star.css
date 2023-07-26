@@ -1,9 +1,44 @@
-#js-canvas-container,#starname_2 {
-    padding-top: 1%;
-    padding-left: 0.5%;
-    background-color:antiquewhite;
+.app-html {
+    width: 100%;
+    height: 100%;
+}
+
+.app-body {
+    width: 100%;
+    height: 100%;
     position: relative;
 }
+
+.canvas-container {
+    position: relative;
+    z-index: 1;
+}
+
+.keyboard {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 
+        visibility 0.4s 0.4s,
+        opacity 0.4s ease-in;
+}
+
+.keyboard-show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease-in;
+}
+
+/* #js-canvas-container,#starname_2 {
+    background-color:antiquewhite;
+    position: relative;
+} */
 
 .ripple{
     position: absolute;

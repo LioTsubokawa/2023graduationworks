@@ -23,10 +23,9 @@ let canvas;
 let startTime = 0;
 // 経過時間
 let elapsedTime = 0;
-
 //実質、timeがタイマーの役割。
-const createTimer = 10000; // 星座を作る時間 10 秒
-const inputTimer = createTimer + 10000; // 名前を作る時間 10 秒
+const createTimer = 20000; // 星座を作る時間 20 秒
+const inputTimer = createTimer + 20000; // 名前を作る時間 20 秒
 // let time = 10000;
 let x = 0;
 
@@ -122,9 +121,8 @@ function mousePressed(){
 
 
 function draw() {
-
     let from = color(29, 46, 92);
-  let to = color(153, 198, 250);
+    let to = color(153, 198, 250);
 
   // 経過時間
   elapsedTime = millis() - startTime;
@@ -175,11 +173,8 @@ function draw() {
       let endPos = abc[j + 1];
       line(startPos.x, startPos.y, endPos.x, endPos.y);
       stroke(233, 232, 65);
-
     }
-        
 }
-
 if (selected === true) {
     image(
       img,
@@ -188,7 +183,7 @@ if (selected === true) {
       img.width / 15,
       img.height / 15
     );
-  }
+}
 
 //   image(img, imgX, imgY, img.width / 40, img.height / 40);
 
@@ -213,8 +208,7 @@ if (selected === true) {
   //     print('time1を過ぎた');
   //     // x += 2;
   // }
-
-
+}
 
 
 
@@ -482,4 +476,3 @@ buttonlist.forEach((button) => {
 //         saveCanvas(c, ((input.value) + '座'), 'png');
 //     }
 // }
-};

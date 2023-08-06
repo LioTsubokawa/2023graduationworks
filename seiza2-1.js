@@ -24,8 +24,8 @@ let startTime = 0;
 // 経過時間
 let elapsedTime = 0;
 //実質、timeがタイマーの役割。
-const createTimer = 20000; // 星座を作る時間 20 秒
-const inputTimer = createTimer + 20000; // 名前を作る時間 20 秒
+const createTimer = 10000; // 星座を作る時間 10 秒
+const inputTimer = createTimer + 10000; // 名前を作る時間 10 秒
 // let time = 10000;
 let x = 0;
 

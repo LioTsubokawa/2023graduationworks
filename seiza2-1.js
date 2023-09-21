@@ -18,6 +18,8 @@ let imgY = 0;
 
 let canvas;
 
+let x1 = 100; // 初期化
+
 // const time1 = 10000;
 //タイマーの秒数は指定したい秒数×１０００で書く。
 let startTime = 0;
@@ -34,6 +36,7 @@ let selected =false;
 
 let cx, cy;
 let secondsRadius;
+
 
 
 
@@ -228,10 +231,31 @@ if (selected === true) {
   fill(255,192,135);
   circle(30/2,windowHeight-15, 25);
 
+  if (x >= 400) { // 繰り返し条件
+    noLoop();
+  }
+
+  x1 += 5; // 更新式
+
   
   
   
 }
+
+
+// function slideAnimation() {
+//     // 現在の位置に10ピクセルずつ追加してスライド
+//     currentPosition += 10;
+//     rectangle.style.left = currentPosition + 'px';
+
+//     // 画面外に出たらリセット
+//     if (currentPosition >= window.innerWidth) {
+//         currentPosition = -100; // 初期位置に戻す
+//     }
+
+//     // アニメーションを継続
+//     requestAnimationFrame(slideAnimation);
+// }
 
   
 // ボタン要素を取得します

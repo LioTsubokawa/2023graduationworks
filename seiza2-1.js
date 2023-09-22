@@ -132,12 +132,13 @@ function mousePressed(){
 
 
 function draw() {
-    let from = color(29, 46, 92);
-    let to = color(153, 198, 250);
-
+    
   // 経過時間
   elapsedTime = millis() - startTime;
 
+  let from = color(29, 46, 92);
+  let to = color(153, 198, 250);
+  let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
   let interA = lerpColor(from, to, elapsedTime / createTimer);
   background(interA);
 
@@ -152,6 +153,7 @@ function draw() {
   } else if (elapsedTime > createTimer) {
     // 星座を作る時間が終わった時の処理
     keyboard.classList.add('keyboard-show');
+    progress = (elapsedTime - createTimer) / (inputTimer - createTimer);
   }
 
   // background(29,46,92);
@@ -222,25 +224,38 @@ if (selected === true) {
 
 
 
-  //タイマーの表示。
-  //↓横線
-  noStroke();
-  fill(230,230,230);
-  rect(10, windowHeight-20, windowWidth, 10);
-  //バーの上の●表示
-  noStroke();
-  fill(255,192,135);
-  circle(30/2,windowHeight-15, 25);
+//   //タイマーの表示。
+//   //↓横線
+//   noStroke();
+//   fill(230,230,230);
+//   rect(10, windowHeight-20, windowWidth, 10);
+//   //バーの上の●表示
+//   noStroke();
+//   fill(255,192,135);
+//   circle(30/2,windowHeight-15, 25);
 
-  if (x >= 400) { // 繰り返し条件
-    noLoop();
-  }
+//   if (x >= 400) { // 繰り返し条件
+//     noLoop();
+//   }
 
   x1 += 5; // 更新式
 
+    // タイマーの位置
+    const timerX = 1480;
+    const timerY = 60;
+    // タイマーの大きさ
+    const timerRad = 100;
   
-  
-  
+    push();
+    noStroke();
+    translate(timerX, timerY);
+    fill(230,230,230);
+    ellipse(0, 0, timerRad, timerRad);
+    rotate(PI / 180 * 270);
+    fill(255,192,135);
+    arc(0, 0, timerRad, timerRad, 0, progress * TWO_PI, PIE);
+    pop();
+
 }
 
 

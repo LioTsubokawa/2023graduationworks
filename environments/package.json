@@ -1,0 +1,16 @@
+{
+  "name": "environments",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Hiroki Kajiya",
+  "license": "MIT",
+  "dependencies": {
+    "osc": "^2.4.4",
+    "robotjs": "^0.6.0"
+  }
+}

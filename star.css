@@ -19,12 +19,23 @@
     z-index: 1;
 }
 
+#suffix {
+    margin-left: 5%;
+    padding: 5% 0;
+    font-size: 25px;
+}
+
 /* .keyboard-background {
     background-color: rgba(0, 0, 0, 0.5);
 } */
 
 #key-input2 {
     margin-top: 10%;
+    color: white;
+}
+
+.input_2 {
+    display: flex;
 }
 
 .key-input {
@@ -115,9 +126,12 @@ main{
 }
 
 .inputstyle {
+    padding: 5% 10%;
     border-radius: 10px;
     border: 1px solid #FFF;
     box-shadow: 0px 0px 10px 1px #FAFF00;
+    color: white;
+    font-size: 25px;
 }
 
 canvas{

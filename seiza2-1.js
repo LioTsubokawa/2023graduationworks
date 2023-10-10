@@ -5,7 +5,7 @@ let images = [];
 let imgCount = 5;
 
 let positions =[];
-let numImages = 200;
+let numImages = 50;
 
 let clickPositions = [[]];
 
@@ -162,8 +162,8 @@ function draw() {
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 40;
-  imgHeight = images[0].height / 40;
+  imgWidth = images[0].width / 10;
+  imgHeight = images[0].height / 10;
 
   for (let i = 0; i < numImages; i++) {
     let pos = positions[i];
@@ -171,8 +171,8 @@ function draw() {
       pos.img,
       pos.x,
       pos.y,
-      images[randIndex].width / 25,
-      images[randIndex].height / 25
+      images[randIndex].width / 10,
+      images[randIndex].height / 10
     );
   }
 
@@ -187,6 +187,7 @@ function draw() {
       let startPos = abc[j];
       let endPos = abc[j + 1];
       line(startPos.x, startPos.y, endPos.x, endPos.y);
+      strokeWeight(4);
       stroke(233, 232, 65);
     }
 }

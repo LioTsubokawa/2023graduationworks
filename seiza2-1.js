@@ -176,6 +176,8 @@ function draw() {
     );
   }
 
+
+  //↓線結んでるコード
   for (let i = 0; i < clickPositions.length; i++) {
     let abc = clickPositions[i];
     // var abc = [clickPositions];

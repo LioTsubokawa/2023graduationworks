@@ -7,6 +7,9 @@ const udpPort = new osc.UDPPort({
   metadata: true,
 });
 
+// クリックしたことにする ID のリスト
+const ids = [];
+
 const { width, height } = robot.getScreenSize();
 
 udpPort.on('message', function (oscMsg, _timeTag, info) {
@@ -15,12 +18,24 @@ udpPort.on('message', function (oscMsg, _timeTag, info) {
   if (address === '/touches' && args.length > 1) {
     const x = args[1].value;
     const y = args[2].value;
-    robot.moveMouse(x, y);
+    const id = args[3].value;
+
+    // すでにクリックされている id であれば無視する
+    if (ids.includes(id)) {
+      return;
+    } else {
+      // クリックしたことのない id であれば画面をクリックしたことにする
+      robot.moveMouse(x, y);
+      robot.mouseClick();
+      // クリックした事にした id を記録する
+      ids.push(id);
+    }
+
     // console.log(args[0].value, args[1].value);
   }
 
-  console.log('An OSC message just arrived!', oscMsg);
-  console.log('Remote info is: ', info);
+  // console.log('An OSC message just arrived!', oscMsg);
+  // console.log('Remote info is: ', info);
 });
 
 udpPort.open();

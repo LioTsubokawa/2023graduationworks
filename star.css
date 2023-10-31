@@ -15,8 +15,9 @@
 }
 
 .canvas-container {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 3; 
+    top: 0;
 }
 
 #suffix {
@@ -158,23 +159,92 @@ ul {
 
 .change {
     justify-content: center;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 2; 
+    top: 0;
 }
 
-.start {
+.start{
     justify-content: center;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 10;
+    top: 0;
+}
+.start_backimage {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.start_button {
+    justify-content: center;
+    position: absolute;
+    z-index: 2; 
+    top: 640px;
+    left: 40%;
 }
 
 .save {
     justify-content: center;
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 5;
+    top: 0;
+}
+
+.save_title{
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    top: 130px;
+    left: 650px;
+}
+
+.save_title2{
+    justify-content: center;
+    font-size: 15px;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    top: 730px;
+    left: 1235px;
+}
+
+.save_backimage{
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    
+}
+
+.save_seiza{
+    position: absolute;
+    justify-content: center;
+    z-index: 2;
+    top: 350px;
+    left: 255px;
+}
+
+.save_qr{
+    position: absolute;
+    justify-content: center;
+    z-index: 2;
+    top: 350px;
+    left: 1225px;
 }
 
 .a-button {

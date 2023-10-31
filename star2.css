@@ -1,0 +1,47 @@
+.header {
+    border-bottom: solid 1px #37352f29;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+  }
+  
+  .header-Heading {
+    color: #333;
+    font-size: 32px;
+    text-align: center;
+    padding: 0.6em 1em;
+  }
+  
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+  }
+  
+  .qr {
+    border: solid 1px #37352f29;
+    display: block;
+    width: 25%;
+    padding: 16px;
+  }
+  
+  .qr-Img {
+    border: solid 1px #37352f29;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+    vertical-align: top;
+  }
+  
+  .qr-container {
+    padding: 0 20%;
+  }
+  
+  .qr-container img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+  

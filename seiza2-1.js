@@ -26,8 +26,8 @@ let startTime = 0;
 // 経過時間
 let elapsedTime = 0;
 //実質、timeがタイマーの役割。
-const createTimer = 10000; // 星座を作る時間 10 秒
-const inputTimer = createTimer + 10000; // 名前を作る時間 10 秒
+const createTimer = 20000; // 星座を作る時間 20 秒
+const inputTimer = createTimer + 20000; // 名前を作る時間 20 秒
 // let time = 10000;
 let x = 0;
 
@@ -50,6 +50,8 @@ function preload() {
 
         
     }
+
+    // img = loadImage('change.png');
 
 }
 
@@ -87,6 +89,10 @@ function setup() {
 
     cx = width / 2;
     cy = height / 2;
+
+
+
+    // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
 
 }
 
@@ -162,7 +168,7 @@ function draw() {
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 10;
+  imgWidth = images[0].width / 10;//クリックの判断サイズを画像サイズと同じにする。
   imgHeight = images[0].height / 10;
 
   for (let i = 0; i < numImages; i++) {
@@ -171,8 +177,8 @@ function draw() {
       pos.img,
       pos.x,
       pos.y,
-      images[randIndex].width / 10,
-      images[randIndex].height / 10
+      images[randIndex].width / 10,//画像の幅を10分の1にする。
+      images[randIndex].height / 10//画像の高さを10分の1にする。
     );
   }
 
@@ -244,8 +250,8 @@ if (selected === true) {
   x1 += 5; // 更新式
 
     // タイマーの位置
-    const timerX = 1480;
-    const timerY = 60;
+    const timerX = 1460;
+    const timerY = 75;
     // タイマーの大きさ
     const timerRad = 100;
   
@@ -517,7 +523,8 @@ buttonlist.forEach((button) => {
         }else if (value === 'けってい'){
             //入力されている最後の文字に濁点の文字があるか
             saveCanvas(canvas, ((input.value) + '座'), 'png');
-              
+            // img = loadImage('change.png');
+            // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
             console.log(value);
             
         }else{

@@ -156,6 +156,27 @@ ul {
     position: relative;
 }
 
+.change {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.start {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.save {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .a-button {
     background-image: url('button/a.png');
     background-size: cover;

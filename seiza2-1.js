@@ -148,19 +148,19 @@ function draw() {
   let interA = lerpColor(from, to, elapsedTime / createTimer);
   background(interA);
 
-  if (elapsedTime > inputTimer) {
-    // 名前を作る時間が終わった時の処理
-    keyboard.classList.remove('keyboard-show');
-    // 名前をリセット
-    input.value = '';
-    // タイマーをリセット
-    startTime = millis();
-    // ここで画像を送る処理をする
-  } else if (elapsedTime > createTimer) {
-    // 星座を作る時間が終わった時の処理
-    keyboard.classList.add('keyboard-show');
-    progress = (elapsedTime - createTimer) / (inputTimer - createTimer);
-  }
+//   if (elapsedTime > inputTimer) {
+//     // 名前を作る時間が終わった時の処理
+//     keyboard.classList.remove('keyboard-show');
+//     // 名前をリセット
+//     input.value = '';
+//     // タイマーをリセット
+//     startTime = millis();
+//     // ここで画像を送る処理をする
+//   } else if (elapsedTime > createTimer) {
+//     // 星座を作る時間が終わった時の処理
+//     keyboard.classList.add('keyboard-show');
+//     progress = (elapsedTime - createTimer) / (inputTimer - createTimer);
+//   }
 
   // background(29,46,92);
 
@@ -548,3 +548,36 @@ buttonlist.forEach((button) => {
 //         saveCanvas(c, ((input.value) + '座'), 'png');
 //     }
 // }
+
+const tl = gsap.timeline();
+
+
+tl.to("#js-start-button", {
+    duration: 3,
+    autoAlpha:0,
+})
+
+tl.to("#js-start", {
+    duration: 3,
+    autoAlpha:0,
+})
+
+// tl.to("#js-canvas-container", {
+//     duration: 3,
+//     autoAlpha:0,
+// })
+
+tl.to("#js-keyboard", {
+    duration: 3,
+    autoAlpha:1,
+})
+
+tl.to("#js-keyboard", {
+    duration: 3,
+    autoAlpha:0,
+})
+
+// tl.to("#js-save", {
+//     duration: 3,
+//     autoAlpha:0,
+// })

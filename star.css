@@ -16,6 +16,8 @@
 
 .canvas-container {
     position: absolute;
+    width: 95%;
+    height: 95%;
     z-index: 3; 
     top: 0;
 }
@@ -187,7 +189,7 @@ ul {
     justify-content: center;
     position: absolute;
     z-index: 2; 
-    top: 640px;
+    top: 60%;
     left: 40%;
 }
 
@@ -196,19 +198,19 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 10;
     top: 0;
 }
 
 .save_title{
     justify-content: center;
     text-align: center;
-    font-size: 25px;
+    font-size: 120%;
     position: absolute;
     color: white;
     z-index: 2;
-    top: 130px;
-    left: 650px;
+    top: 15%;
+    left: 40%;
 }
 
 .save_title2{
@@ -217,8 +219,8 @@ ul {
     position: absolute;
     color: white;
     z-index: 2;
-    top: 730px;
-    left: 1235px;
+    top: 80%;
+    right: 13%;
 }
 
 .save_backimage{
@@ -233,18 +235,18 @@ ul {
 
 .save_seiza{
     position: absolute;
-    justify-content: center;
+    width: 40%;
     z-index: 2;
-    top: 350px;
-    left: 255px;
+    top: 39%;
+    left: 13%;
 }
 
 .save_qr{
     position: absolute;
-    justify-content: center;
+    width: 18%;
     z-index: 2;
-    top: 350px;
-    left: 1225px;
+    top: 39%;
+    right: 15%;
 }
 
 .a-button {

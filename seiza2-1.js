@@ -49,9 +49,8 @@ function preload() {
     for(let i = 0; i < imgCount; i++){
         images[i] = loadImage('star' + i + '.png')
 
-         img = loadImage('stargradation3.png')
+        img = loadImage('stargradation3.png')
 
-        
     }
 
     // img = loadImage('change.png');
@@ -561,11 +560,13 @@ const state = {
 tl.to("#js-start-button", {
     duration: 3,
     autoAlpha:0,
+    ease: "power3.out",
 });
 
 tl.to("#js-start", {
     duration: 3,
     autoAlpha:0,
+    ease: "power3.in",
 });
 
 // tl.to("#js-canvas-container", {
@@ -576,23 +577,26 @@ tl.to("#js-start", {
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
+    ease: "power3.in",
 });
 
 tl.to(state,{
-    duration:3,
+    duration:10,
     progress:1,
 });
 
-tl.to("#js-keyboard", {
+tl.to("#js-keyboard,#js-canvas-container" ,{
     duration: 3,
     autoAlpha:0,
+    ease: "power3.in",
 });
 
 
-tl.to("#js-canvas-container", {
-    duration: 10,
-    autoAlpha:0,
-});
+// tl.to("#js-canvas-container", {
+//     duration: 2,
+//     autoAlpha:0,
+//     ease: "power3.in",
+// });
 
 tl.to(state,{
     duration:3,
@@ -605,13 +609,14 @@ tl.to("#js-save", {
 });
 
 tl.to(state,{
-    duration:3,
+    duration:10,
     progress:1,
 });
 
 tl.to("#js-start, #js-start-button", {
     duration: 3,
     autoAlpha:1,
+    ease: "power3.in",
 });
 
 console.log(startButton);
@@ -620,6 +625,6 @@ startButton.addEventListener('click', (e) => {
 
     console.log('スタートボタンが押されました。');
 
-    tl.play();
+    tl.play(0);
     
 });

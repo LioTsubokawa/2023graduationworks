@@ -1,5 +1,8 @@
+// const { start } = require("repl");
+
 const keyboard = document.querySelector('#js-keyboard');
 const input = document.querySelector('#myInput');
+const startButton = document.querySelector('#js-start-button');
 
 let images = [];
 let imgCount = 5;
@@ -549,18 +552,21 @@ buttonlist.forEach((button) => {
 //     }
 // }
 
-const tl = gsap.timeline();
+const tl = gsap.timeline({paused: true});
+const state = {
+    progress : 0.0
+};
 
 
 tl.to("#js-start-button", {
     duration: 3,
     autoAlpha:0,
-})
+});
 
 tl.to("#js-start", {
     duration: 3,
     autoAlpha:0,
-})
+});
 
 // tl.to("#js-canvas-container", {
 //     duration: 3,
@@ -570,14 +576,50 @@ tl.to("#js-start", {
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
-})
+});
+
+tl.to(state,{
+    duration:3,
+    progress:1,
+});
 
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:0,
-})
+});
 
-// tl.to("#js-save", {
-//     duration: 3,
-//     autoAlpha:0,
-// })
+
+tl.to("#js-canvas-container", {
+    duration: 10,
+    autoAlpha:0,
+});
+
+tl.to(state,{
+    duration:3,
+    progress:1,
+});
+
+tl.to("#js-save", {
+    duration: 3,
+    autoAlpha:0,
+});
+
+tl.to(state,{
+    duration:3,
+    progress:1,
+});
+
+tl.to("#js-start, #js-start-button", {
+    duration: 3,
+    autoAlpha:1,
+});
+
+console.log(startButton);
+
+startButton.addEventListener('click', (e) => {
+
+    console.log('スタートボタンが押されました。');
+
+    tl.play();
+    
+});

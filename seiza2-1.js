@@ -29,8 +29,8 @@ let startTime = 0;
 // 経過時間
 let elapsedTime = 0;
 //実質、timeがタイマーの役割。
-const createTimer = 20000; // 星座を作る時間 20 秒
-const inputTimer = createTimer + 20000; // 名前を作る時間 20 秒
+const createTimer = 30000; // 星座を作る時間 20 秒
+const inputTimer = createTimer + 30000; // 名前を作る時間 20 秒
 // let time = 10000;
 let x = 0;
 
@@ -574,6 +574,11 @@ tl.to("#js-start", {
 //     autoAlpha:0,
 // })
 
+tl.to(state,{
+    duration:30,
+    progress:1,
+});
+
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
@@ -581,7 +586,7 @@ tl.to("#js-keyboard", {
 });
 
 tl.to(state,{
-    duration:10,
+    duration:30,
     progress:1,
 });
 

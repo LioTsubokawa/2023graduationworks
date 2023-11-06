@@ -604,7 +604,7 @@ tl.to("#js-keyboard,#js-canvas-container" ,{
 // });
 
 tl.to(state,{
-    duration:3,
+    duration:30,
     progress:1,
 });
 

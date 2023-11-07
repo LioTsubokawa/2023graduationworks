@@ -195,6 +195,8 @@ ul {
 }
 
 .save {
+    background-image: url('save.png');
+    background-size: 100% 100%;
     justify-content: center;
     position: absolute;
     width: 100%;
@@ -207,16 +209,16 @@ ul {
     justify-content: center;
     text-align: center;
     font-size: 120%;
-    position: absolute;
+    /* position: absolute; */
     color: white;
     z-index: 2;
     top: 15%;
     left: 40%;
 }
 
-.save_inner{
+.save_contents{
     display: flex;
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     color: white;
     z-index: 2;

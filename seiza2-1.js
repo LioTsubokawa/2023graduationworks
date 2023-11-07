@@ -40,7 +40,21 @@ let selected =false;
 let cx, cy;
 let secondsRadius;
 
-
+//星の座標を更新する。
+function uppdatePosition(){
+    //星の画像（種類）と座標を決める。
+    for(let i = 0; i < numImages; i++){
+        const randIndex = int(random(images.length));
+        const xPos = random(width);
+        const yPos = random(height);
+        
+        positions[i] = {
+             img: images[randIndex],
+             x:xPos,
+             y:yPos
+        }
+    }
+}
 
 
 
@@ -62,18 +76,6 @@ function setup() {
     canvas.parent('js-canvas-container');
     background(29,46,92);
 
-    //星の画像（種類）と座標を決める。
-    for(let i = 0; i < numImages; i++){
-        let randIndex = int(random(images.length));
-        let xPos = random(width);
-        let yPos = random(height);
-        
-        positions[i] = {
-             img: images[randIndex],
-             x:xPos,
-             y:yPos
-        }
-    }
     //noLoop();
 
     const body = document.getElementById('js-body');
@@ -559,6 +561,7 @@ const tl = gsap.timeline({
     onStart: () => {
         clickPositions = [[]];
         input.value = '';
+        uppdatePosition (),
         console.log('タイムラインがはじまった')
     }
 });

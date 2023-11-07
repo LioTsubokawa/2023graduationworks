@@ -115,7 +115,7 @@ console.log("Image clicked!")
 
 function mousePressed(){
     selected = false;
-    for(let i = 0; i < numImages; i++){
+    for(let i = 0; i < positions.length; i++){
         const pos = positions[i];
 
         //星が選ばれているか？
@@ -178,7 +178,7 @@ function draw() {
   imgHeight = images[0].height / 10;
 
   //星の画像を表示する。
-  for (let i = 0; i < numImages; i++) {
+  for (let i = 0; i < positions.length; i++) {
     let pos = positions[i];
     image(
       pos.img,

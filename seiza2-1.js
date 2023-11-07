@@ -249,23 +249,23 @@ if (selected === true) {
 //     noLoop();
 //   }
 
-  x1 += 5; // 更新式
+//   x1 += 5; // 更新式
 
-    // タイマーの位置
-    const timerX = 1460;
-    const timerY = 75;
-    // タイマーの大きさ
-    const timerRad = 100;
+//     // タイマーの位置
+//     const timerX = 1460;
+//     const timerY = 75;
+//     // タイマーの大きさ
+//     const timerRad = 100;
   
-    push();
-    noStroke();
-    translate(timerX, timerY);
-    fill(230,230,230);
-    ellipse(0, 0, timerRad, timerRad);
-    rotate(PI / 180 * 270);
-    fill(255,192,135);
-    arc(0, 0, timerRad, timerRad, 0, progress * TWO_PI, PIE);
-    pop();
+//     push();
+//     noStroke();
+//     translate(timerX, timerY);
+//     fill(230,230,230);
+//     ellipse(0, 0, timerRad, timerRad);
+//     rotate(PI / 180 * 270);
+//     fill(255,192,135);
+//     arc(0, 0, timerRad, timerRad, 0, progress * TWO_PI, PIE);
+//     pop();
 
 }
 
@@ -569,16 +569,16 @@ tl.to("#js-start", {
     ease: "power3.in",
 });
 
-// tl.to("#js-canvas-container", {
-//     duration: 3,
-//     autoAlpha:0,
-// })
+tl.to("#js-timer", {
+    duration: 1,
+    autoAlpha:1,
+})
 
 
 
 tl.to('#js-timer',{
     duration:30,
-    backgroundImage: 'conic-gradient(#ff6161 360deg, #ccc 360deg)',
+    backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
 
@@ -592,21 +592,21 @@ tl.fromTo(
     '#js-timer',
     // アニメーション始める前の設定。
     {
-        backgroundImage: 'conic-gradient(#ff6161 0deg, #ccc 0deg)',
+        backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
         duration:30,
-        backgroundImage: 'conic-gradient(#ff6161 360deg, #ccc 360deg)',
+        backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
 );
 
-tl.to(state,{
-    duration:30,
-    progress:1,
-});
+// tl.to(state,{
+//     duration:30,
+//     progress:1,
+// });
 
-tl.to("#js-keyboard,#js-canvas-container" ,{
+tl.to("#js-keyboard,#js-canvas-container,#js-timer" ,{
     duration: 3,
     autoAlpha:0,
     ease: "power3.in",

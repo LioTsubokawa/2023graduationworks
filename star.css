@@ -249,6 +249,15 @@ ul {
     right: 15%;
 }
 
+.timer {
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+    background-image: conic-gradient(#ff6161 0deg, #ccc 0deg);
+    position: absolute;
+    z-index: 10;
+  }
+
 .a-button {
     background-image: url('button/a.png');
     background-size: cover;

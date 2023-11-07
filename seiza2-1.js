@@ -574,16 +574,32 @@ tl.to("#js-start", {
 //     autoAlpha:0,
 // })
 
-tl.to(state,{
+
+
+tl.to('#js-timer',{
     duration:30,
-    progress:1,
+    backgroundImage: 'conic-gradient(#ff6161 360deg, #ccc 360deg)',
+    ease :'none',
 });
 
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
-    ease: "power3.in",
+    ease: "power3.out",
 });
+
+tl.fromTo(
+    '#js-timer',
+    // アニメーション始める前の設定。
+    {
+        backgroundImage: 'conic-gradient(#ff6161 0deg, #ccc 0deg)',
+    },
+    {
+        duration:30,
+        backgroundImage: 'conic-gradient(#ff6161 360deg, #ccc 360deg)',
+        ease :'none',
+    }
+);
 
 tl.to(state,{
     duration:30,

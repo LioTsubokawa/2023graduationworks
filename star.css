@@ -201,7 +201,7 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 2;
     top: 0;
 }
 
@@ -238,9 +238,11 @@ ul {
 
 .save_title2{
     /* justify-content: center; */
-    font-size: 30%;
+    /* font-size: 30%; */
+    width: 20%;
     color: white;
     font-size: 25px;
+    
     /* z-index: 2;
     top: 80%;
     right: 13%; */
@@ -253,7 +255,7 @@ ul {
 }
 
 .save_qr{
-    width: 90%;
+    width: 100%;
     /* z-index: 2; */
     /* top: 39%;
     right: 15%; */

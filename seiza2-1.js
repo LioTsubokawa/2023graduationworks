@@ -5,12 +5,12 @@ const input = document.querySelector('#myInput');
 const startButton = document.querySelector('#js-start-button');
 
 let images = [];
-let imgCount = 5;
+let imgCount = 5;//星の種類。
 
 let positions =[];
-let numImages = 50;
+let numImages = 50;//星の数。
 
-let clickPositions = [[]];
+let clickPositions = [[]];//線の頂点の座標。
 
 let imgWidth = 0;
 let imgHeight = 0;
@@ -61,16 +61,18 @@ function setup() {
     canvas = createCanvas(windowWidth,windowHeight);
     canvas.parent('js-canvas-container');
     background(29,46,92);
+
+    //星の画像（種類）と座標を決める。
     for(let i = 0; i < numImages; i++){
         let randIndex = int(random(images.length));
         let xPos = random(width);
         let yPos = random(height);
         
-         positions[i] = {
+        positions[i] = {
              img: images[randIndex],
              x:xPos,
              y:yPos
-         }
+        }
     }
     //noLoop();
 
@@ -173,6 +175,7 @@ function draw() {
   imgWidth = images[0].width / 10;//クリックの判断サイズを画像サイズと同じにする。
   imgHeight = images[0].height / 10;
 
+  //星の画像を表示する。
   for (let i = 0; i < numImages; i++) {
     let pos = positions[i];
     image(
@@ -554,6 +557,7 @@ buttonlist.forEach((button) => {
 const tl = gsap.timeline({
     paused: true,
     onStart: () => {
+        clickPositions = [[]];
         input.value = '';
         console.log('タイムラインがはじまった')
     }

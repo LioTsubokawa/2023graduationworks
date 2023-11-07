@@ -551,7 +551,13 @@ buttonlist.forEach((button) => {
 //     }
 // }
 
-const tl = gsap.timeline({paused: true});
+const tl = gsap.timeline({
+    paused: true,
+    onStart: () => {
+        input.value = '';
+        console.log('タイムラインがはじまった')
+    }
+});
 const state = {
     progress : 0.0
 };

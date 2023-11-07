@@ -14,7 +14,7 @@ const { width, height } = robot.getScreenSize();
 
 udpPort.on('message', function (oscMsg, _timeTag, info) {
   const { address, args } = oscMsg;
-
+  console.log(args);
   if (address === '/touches' && args.length > 1) {
     const x = args[1].value;
     const y = args[2].value;

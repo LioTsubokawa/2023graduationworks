@@ -179,8 +179,8 @@ background(21,30,60);
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 5;//クリックの判断サイズを画像サイズと同じにする。
-  imgHeight = images[0].height / 5;
+  imgWidth = images[0].width / 4.5;//クリックの判断サイズを画像サイズと同じにする。
+  imgHeight = images[0].height / 4.5;
 
   //星の画像を表示する。
   for (let i = 0; i < positions.length; i++) {
@@ -189,8 +189,8 @@ background(21,30,60);
       pos.img,
       pos.x,
       pos.y,
-      images[randIndex].width / 5,//画像の幅を10分の1にする。
-      images[randIndex].height / 5//画像の高さを10分の1にする。
+      images[randIndex].width / 5,//画像の幅を5分の1にする。
+      images[randIndex].height / 5//画像の高さを5分の1にする。
     );
   }
 
@@ -607,7 +607,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:30,
+    duration:10,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -629,7 +629,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:30,
+        duration:10,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -666,7 +666,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:30,
+        duration:10,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
         onStart: () => {

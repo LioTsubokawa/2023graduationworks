@@ -25,7 +25,7 @@
 #suffix {
     margin-left: 5%;
     padding: 5% 0;
-    font-size: 25px;
+    font-size: 40px;
 }
 
 /* .keyboard-background {
@@ -33,7 +33,7 @@
 } */
 
 #key-input2 {
-    margin-top: 10%;
+    margin-top: 7.5%;
     color: white;
 }
 
@@ -51,17 +51,18 @@
 
 .keyboard {
     background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 4;
-    opacity: 0;
+    z-index: 300;
+    /* opacity: 0;
     visibility: hidden;
     transition: 
     visibility 0.4s 0.4s,
-    opacity 0.4s ease-in;
+    opacity 0.4s ease-in; */
     
 }
 
@@ -280,8 +281,8 @@ ul {
     background-image: url('button/a.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 } 
   
@@ -289,48 +290,48 @@ ul {
     background-image: url('button/i.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 } 
 
 .u-button {
     background-image: url('button/u.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 } 
 
 .e-button {
     background-image: url('button/e.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 } 
 
 .o-button {
     background-image: url('button/o.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ka-button {
     background-image: url('button/ka.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -338,48 +339,48 @@ ul {
     background-image: url('button/ki.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ku-button {
     background-image: url('button/ku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ke-button {
     background-image: url('button/ke.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ko-button {
     background-image: url('button/ko.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .sa-button {
     background-image: url('button/sa.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -387,48 +388,48 @@ ul {
     background-image: url('button/si.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .su-button {
     background-image: url('button/su.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .se-button {
     background-image: url('button/se.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .so-button {
     background-image: url('button/so.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ta-button {
     background-image: url('button/ta.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -436,48 +437,48 @@ ul {
     background-image: url('button/ti.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .tu-button {
     background-image: url('button/tu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .te-button {
     background-image: url('button/te.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .to-button {
     background-image: url('button/to.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .na-button {
     background-image: url('button/na.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -485,48 +486,48 @@ ul {
     background-image: url('button/ni.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .nu-button {
     background-image: url('button/nu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ne-button {
     background-image: url('button/ne.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .no-button {
     background-image: url('button/no.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ha-button {
     background-image: url('button/ha.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -534,48 +535,48 @@ ul {
     background-image: url('button/hi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .hu-button {
     background-image: url('button/hu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .he-button {
     background-image: url('button/he.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ho-button {
     background-image: url('button/ho.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ma-button {
     background-image: url('button/ma.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -583,48 +584,48 @@ ul {
     background-image: url('button/mi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .mu-button {
     background-image: url('button/mu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .me-button {
     background-image: url('button/me.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .mo-button {
     background-image: url('button/mo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ya-button {
     background-image: url('button/ya.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -633,10 +634,10 @@ ul {
     background-image: url('button/yu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .yo-button {
@@ -644,18 +645,18 @@ ul {
     background-image: url('button/yo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ra-button {
     background-image: url('button/ra.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -663,48 +664,48 @@ ul {
     background-image: url('button/ri.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ru-button {
     background-image: url('button/ru.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .re-button {
     background-image: url('button/re.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .ro-button {
     background-image: url('button/ro.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .wa-button {
     background-image: url('button/wa.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
 }
 
@@ -713,10 +714,10 @@ ul {
     background-image: url('button/wo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .n-button {
@@ -724,70 +725,77 @@ ul {
     background-image: url('button/nn.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .mojikesi-button {
     background-image: url('button/mojikesi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 83px;
-    height: 58px;
+    width: 143px;
+    height: 118px;
     border: none;
-    margin-top: 7px;
+    margin-top: 2px;
 }
 
 .dakuten-button {
     background-image: url('button/daku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-left: 30px;
+    margin-top: 2px;
 }
 
 .handakuten-button {
     background-image: url('button/handaku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-left: 30px;
+    margin-top: 15px;
 }
 
 .komoji-button {
     background-image: url('button/komoji.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 135px;
-    height: 62px;
+    width: 205px;
+    height: 102px;
     border: none;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .nobasi-button {
     background-image: url('button/nobasi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 62px;
-    height: 62px;
+    width: 102px;
+    height: 102px;
+    margin-left: 30px;
     border: none;
+    margin-top: 15px;
 }
 
 .kettei-button {
-    margin-top: 215%;
     background-image: url('button/kettei.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 115px;
-    height: 82px;
+    width: 135px;
+    height: 102px;
     border: none;
-    position: absolute;
     bottom: 0;
-    
+    margin-left: 40px;
+}
+
+.hozon-button{
+    display: flex;
+    align-items: flex-end;
 }

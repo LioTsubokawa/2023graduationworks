@@ -4,6 +4,7 @@ const keyboard = document.querySelector('#js-keyboard');
 const input = document.querySelector('#myInput');
 const startButton = document.querySelector('#js-start-button');
 const ketteiButton = document.querySelector('#kettei');
+const starName = document.querySelector('#myStar');
 
 
 
@@ -574,8 +575,9 @@ const tl = gsap.timeline({
     onStart: () => {
         clickPositions = [[]];
         input.value = '';
-        uppdatePosition (),
+        uppdatePosition();
         console.log('タイムラインがはじまった')
+        starName.textContent = 'ななし';
     }
 });
 const state = {
@@ -667,6 +669,11 @@ tl.fromTo(
         duration:30,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
+        onStart: () => {
+            if ((input.value).length  >= 1 ){
+                starName.textContent = input.value;
+            }
+        }
     }
 );
 
@@ -704,3 +711,6 @@ startButton.addEventListener('click', (e) => {
 ketteiButton.addEventListener("click", () => {
     tl.seek("skip-target");
 });
+
+
+// document.getElementById("#myStar").textContent = '';

@@ -3,12 +3,15 @@
 const keyboard = document.querySelector('#js-keyboard');
 const input = document.querySelector('#myInput');
 const startButton = document.querySelector('#js-start-button');
+const ketteiButton = document.querySelector('#kettei');
+
+
 
 let images = [];
 let imgCount = 5;//星の種類。
 
 let positions =[];
-let numImages = 50;//星の数。
+let numImages = 30;//星の数。
 
 let clickPositions = [[]];//線の頂点の座標。
 
@@ -145,14 +148,15 @@ function mousePressed(){
 
 function draw() {
     
-  // 経過時間
-  elapsedTime = millis() - startTime;
+//   // 経過時間
+//   elapsedTime = millis() - startTime;
 
-  let from = color(29, 46, 92);
-  let to = color(153, 198, 250);
-  let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
-  let interA = lerpColor(from, to, elapsedTime / createTimer);
-  background(interA);
+//   let from = color(29, 46, 92);
+//   let to = color(153, 198, 250);
+//   let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
+//   let interA = lerpColor(from, to, elapsedTime / createTimer);
+//   background(interA);
+background(21,30,60);
 
 //   if (elapsedTime > inputTimer) {
 //     // 名前を作る時間が終わった時の処理
@@ -174,8 +178,8 @@ function draw() {
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 10;//クリックの判断サイズを画像サイズと同じにする。
-  imgHeight = images[0].height / 10;
+  imgWidth = images[0].width / 5;//クリックの判断サイズを画像サイズと同じにする。
+  imgHeight = images[0].height / 5;
 
   //星の画像を表示する。
   for (let i = 0; i < positions.length; i++) {
@@ -184,8 +188,8 @@ function draw() {
       pos.img,
       pos.x,
       pos.y,
-      images[randIndex].width / 10,//画像の幅を10分の1にする。
-      images[randIndex].height / 10//画像の高さを10分の1にする。
+      images[randIndex].width / 5,//画像の幅を10分の1にする。
+      images[randIndex].height / 5//画像の高さを10分の1にする。
     );
   }
 
@@ -291,7 +295,14 @@ if (selected === true) {
 
   
 // ボタン要素を取得します
+
+
+
+
+//決定ボタンの情報を読み込んでる。
 const buttonlist = document.querySelectorAll('.js-button');
+
+
 
 // ボタンがクリックされたときのイベントハンドラを設定します
 // button.addEventListener('click', function() {
@@ -556,6 +567,8 @@ buttonlist.forEach((button) => {
 //     }
 // }
 
+
+//タイムラインの設定。インプットの中身を空にして、線を白紙にして、星の位置をリロードさせる。
 const tl = gsap.timeline({
     paused: true,
     onStart: () => {
@@ -569,38 +582,44 @@ const state = {
     progress : 0.0
 };
 
-
+//スタートボタンが消える。
 tl.to("#js-start-button", {
     duration: 3,
     autoAlpha:0,
     ease: "power3.out",
 });
 
+//スタートの背景が消える。
 tl.to("#js-start", {
     duration: 3,
     autoAlpha:0,
     ease: "power3.in",
 });
 
+//タイマーを表示させる。
 tl.to("#js-timer", {
     duration: 1,
     autoAlpha:1,
 })
 
 
-
+//タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
     duration:30,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
 
+
+//キーボードを表示させる。
 tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
     ease: "power3.out",
 });
 
+
+//名前つけるときのタイマー。
 tl.fromTo(
     '#js-timer',
     // アニメーション始める前の設定。
@@ -618,12 +637,17 @@ tl.fromTo(
 //     duration:30,
 //     progress:1,
 // });
-
-tl.to("#js-keyboard,#js-canvas-container,#js-timer" ,{
+//キーボードと星画面を隠す。
+tl.to("#js-keyboard,#js-canvas-container" ,{
     duration: 3,
     autoAlpha:0,
     ease: "power3.in",
 });
+
+
+//スキップさせるコード
+tl.addLabel("skip-target");
+
 
 
 // tl.to("#js-canvas-container", {
@@ -632,21 +656,33 @@ tl.to("#js-keyboard,#js-canvas-container,#js-timer" ,{
 //     ease: "power3.in",
 // });
 
-tl.to(state,{
-    duration:30,
-    progress:1,
-});
+//「保存されました」画面のタイマー
+tl.fromTo(
+    '#js-timer',
+    // アニメーション始める前の設定。
+    {
+        backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
+    },
+    {
+        duration:30,
+        backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
+        ease :'none',
+    }
+);
 
+//「保存されました画面」を隠す。
 tl.to("#js-save", {
     duration: 3,
     autoAlpha:0,
 });
 
+//交代案内の画面を１０秒間表示させる。
 tl.to(state,{
     duration:10,
     progress:1,
 });
 
+//スタート画面を表示させる。
 tl.to("#js-start, #js-start-button", {
     duration: 3,
     autoAlpha:1,
@@ -655,10 +691,16 @@ tl.to("#js-start, #js-start-button", {
 
 console.log(startButton);
 
+//スタートボタンが押されたらコンソールログをだす。
 startButton.addEventListener('click', (e) => {
 
     console.log('スタートボタンが押されました。');
 
     tl.play(0);
     
+});
+
+
+ketteiButton.addEventListener("click", () => {
+    tl.seek("skip-target");
 });

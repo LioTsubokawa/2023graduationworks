@@ -5,6 +5,7 @@ const input = document.querySelector('#myInput');
 const startButton = document.querySelector('#js-start-button');
 const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
+const starImages = document.querySelector('#seiza_img');
 
 
 
@@ -99,6 +100,8 @@ function setup() {
 
     cx = width / 2;
     cy = height / 2;
+
+    console.log(canvas);
 
 
 
@@ -200,7 +203,7 @@ background(21,30,60);
     let abc = clickPositions[i];
     // var abc = [clickPositions];
     for (let j = 0; j < abc.length - 1; j++) {
-      console.log(abc[j]);
+    //   console.log(abc[j]);
 
       let startPos = abc[j];
       let endPos = abc[j + 1];
@@ -540,11 +543,22 @@ buttonlist.forEach((button) => {
             console.log(value);
             
         }else if (value === 'けってい'){
-            //入力されている最後の文字に濁点の文字があるか
-            saveCanvas(canvas, ((input.value) + '座'), 'png');
-            // img = loadImage('change.png');
-            // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
+            // // let canvas = document.getElementById('seiza_img');
+            // // const ctx = canvas.canvas.getContext('2d');
+            // let mime_type = "image/png";
+            // var data_url = canvas.canvas.toDataURL(mime_type);
+            // // var base64 = window.btoa(data_url);
+            // //入力されている最後の文字に濁点の文字があるか
+            // // saveCanvas(canvas, ((input.value) + '座'), 'png');
+            // //var newImagePath = ((),png);
+            // // img = loadImage('change.png');
+            // // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
+            // const url = (data_url);
+            // starImages.src = url;
+            // console.log(data_url);//imgのsrcに指定する。
             console.log(value);
+            
+
             
         }else{
             // コンソールログにメッセージを出力します
@@ -675,6 +689,14 @@ tl.fromTo(
             if ((input.value).length  >= 1 ){
                 starName.textContent = input.value;
             }
+
+            let mime_type = "image/png";
+            var data_url = canvas.canvas.toDataURL(mime_type);
+            const url = (data_url);
+            starImages.src = url;
+            console.log(data_url);//imgのsrcに指定する。
+            console.log(value);
+
         }
     }
 );

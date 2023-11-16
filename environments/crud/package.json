@@ -1,0 +1,27 @@
+{
+  "name": "tsubokawa23-star",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "npx sls deploy --verbose",
+    "deploy-prod": "npx sls deploy --stage prod --verbose",
+    "dev": "npx sls offline start",
+    "dynamodb-start": "npx sls dynamodb start",
+    "dynamodb-admin": "npx dynamodb-admin",
+    "info": "npx sls info --verbose",
+    "info-prod": "npx sls info --stage prod --verbose",
+    "remove": "npx sls remove --verbose",
+    "remove-prod": "npx sls remove --stage prod --verbose"
+  },
+  "author": "Hiroki Kajiya",
+  "license": "MIT",
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.429.0",
+    "serverless-offline": "^13.2.0",
+    "serverless-s3-local": "^0.8.1"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1"
+  }
+}

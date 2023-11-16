@@ -605,12 +605,14 @@ tl.to("#js-timer", {
 })
 
 
+
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
     duration:10,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
+
 
 
 //キーボードを表示させる。

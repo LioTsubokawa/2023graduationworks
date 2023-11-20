@@ -6,6 +6,7 @@ const {
   PutObjectCommand,
 } = require('@aws-sdk/client-s3');
 const Ajv = require('ajv');
+const QRCode = require('qrcode');
 
 const ALLOWED_ORIGINS = ['http://localhost:5500'];
 
@@ -84,6 +85,39 @@ const hiraganaToRomaji = (hiragana) => {
   return hiragana.split('').map(char => conversionTable[char] || char).join('-');
 };
 
+/**
+ * putQRCode
+ */
+const putQRCode = (url, fileName) => {
+  return new Promise((resolve, reject) => {
+    const options = {
+      errorCorrectionLevel: 'M',
+      margin: 1,
+      type: 'png',
+      width: 512,
+    };
+
+    QRCode.toDataURL(url, options, async (error, url) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      const [_, contentType, extension, base64String] = url.match(base64RegExp);
+      // 画像が保存されるパス
+      const key = `${fileName}.${extension}`;
+      // リクエストボディに設定された画像データはBase64エンコードされているので、デコードする
+      const body = Buffer.from(base64String, 'base64');
+
+      await putObject(body, contentType, key);
+
+      resolve(
+        `https://${process.env.S3_BUCKET}.s3.${process.env.REGION}.amazonaws.com/${key}`
+      );
+    });
+  });
+};
+
 module.exports.create = async (event) => {
   const origin = event.headers.origin;
   const prefix = crypto.randomUUID();
@@ -106,9 +140,13 @@ module.exports.create = async (event) => {
 
     const [_, contentType, extension, base64String] = image.match(base64RegExp);
     // 画像が保存されるパス
-    const key = `${prefix}___${hiraganaToRomaji(name)}.${extension}`;
+    const fileName = `${prefix}___${hiraganaToRomaji(name)}`;
+    const qrFileName = `qr-${fileName}`;
+    const key = `${fileName}.${extension}`;
     // リクエストボディに設定された画像データはBase64エンコードされているので、デコードする
     const body = Buffer.from(base64String, 'base64');
+    const imageUrl = `https://${process.env.S3_BUCKET}.s3.${process.env.REGION}.amazonaws.com/${key}`;
+    const qrCodeUrl = await putQRCode(imageUrl, qrFileName);
 
     await putObject(body, contentType, key);
 
@@ -117,7 +155,8 @@ module.exports.create = async (event) => {
       body: JSON.stringify({
         name,
         status: 'OK',
-        url: `https://${process.env.S3_BUCKET}.s3.${process.env.REGION}.amazonaws.com/${key}`,
+        imageUrl,
+        qrCodeUrl,
       }),
     };
   } catch (error) {

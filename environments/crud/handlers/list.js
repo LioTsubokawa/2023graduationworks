@@ -60,6 +60,7 @@ const romajiToHiragana = (romaji) => {
 
 module.exports.list = async (event) => {
   const origin = event.headers.origin;
+  const entityIds = [];
   const headers = {
     'Access-Control-Allow-Origin': '*',
   };
@@ -81,18 +82,38 @@ module.exports.list = async (event) => {
     
     output.Contents.sort((a, b) => a.LastModified - b.LastModified);
 
-    const images = output.Contents.map(({ Key }) => {
-      return {
-        name: romajiToHiragana(Key.split('___')[1].split('.')[0]),
-        url: `https://${process.env.S3_BUCKET}.s3.${process.env.REGION}.amazonaws.com/${Key}`
-      };
+    output.Contents.forEach(({ Key }) => {
+      const entityId =  Key.split('___')[0].replace('qr-', '');
+      
+      if (!entityIds.includes(entityId)) {
+        entityIds.push(entityId);
+      }
     });
+
+    const entities = output.Contents.reduce((acc, { Key }) => {
+      const isRrCode = Key.includes('qr-');
+      const entityId = Key.split('___')[0].replace('qr-', '');
+      const url = `https://${process.env.S3_BUCKET}.s3.${process.env.REGION}.amazonaws.com/${Key}`;
+
+      if (!acc.hasOwnProperty(entityId)) {
+        acc[entityId] = {};
+      }
+
+      if (isRrCode) {
+        acc[entityId].qrCodeUrl = url;
+      } else {
+        acc[entityId].imageUrl = url;
+      }
+
+      return acc;
+    }, {});
 
     return {
       statusCode: 200,
       body: JSON.stringify({
         status: 'OK',
-        images,
+        entities,
+        entityIds,
       }),
     };
   } catch (error) {

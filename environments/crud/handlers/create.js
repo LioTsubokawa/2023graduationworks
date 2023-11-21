@@ -151,23 +151,24 @@ module.exports.create = async (event) => {
     await putObject(body, contentType, key);
 
     return {
-      statusCode: 200,
       body: JSON.stringify({
         name,
         status: 'OK',
         imageUrl,
         qrCodeUrl,
       }),
+      headers,
+      statusCode: 200,
     };
   } catch (error) {
     console.error(error);
     return {
-      statusCode: 400,
       body: JSON.stringify({
         status: 'ERROR',
         error,
       }),
       headers,
+      statusCode: 400,
     };
   }
 };

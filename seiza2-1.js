@@ -613,7 +613,7 @@ tl.to("#js-start-button", {
 tl.to("#js-start", {
     duration: 3,
     autoAlpha:0,
-    ease: "power3.in",
+    ease: "power3.out",
 });
 
 //タイマーを表示させる。
@@ -626,7 +626,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:30,
+    duration:10,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -649,7 +649,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:30,
+        duration:10,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -732,7 +732,7 @@ tl.fromTo(
 );
 
 //「保存されました画面」を隠す。
-tl.to("#js-save", {
+tl.to("#js-save, #js-timer",{
     duration: 3,
     autoAlpha:0,
 });

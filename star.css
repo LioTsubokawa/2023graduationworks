@@ -202,7 +202,8 @@ ul {
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    /* ↓もともとは2 */
+    z-index: 2; 
     top: 0;
 }
 
@@ -240,9 +241,10 @@ ul {
 .save_title2{
     /* justify-content: center; */
     /* font-size: 30%; */
-    width: 20%;
+    width: 25%;
     color: white;
-    font-size: 25px;
+    font-size: 28px;
+    margin-top: 9.5%;
     
     /* z-index: 2;
     top: 80%;
@@ -255,12 +257,12 @@ ul {
     /* z-index: 2; */
 }
 
-.save_qr{
+/* .save_qr{
     width: 100%;
-    /* z-index: 2; */
-    /* top: 39%;
-    right: 15%; */
-}
+    z-index: 2; 
+     top: 39%;
+    right: 15%;
+} */
 
 .text_2{
     text-align: center;

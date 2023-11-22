@@ -1,24 +1,75 @@
 .header {
-    border-bottom: solid 1px #37352f29;
+    background-color: black;
+    border-bottom: solid 1px white;
     font-family: 'Fjalla One', sans-serif;
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Zen Kurenaido', sans-serif;
   }
   
   .header-Heading {
-    color: #333;
-    font-size: 32px;
+    color: white;
+    font-size: 45px;
     text-align: center;
     padding: 0.6em 1em;
   }
   
   .main {
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
+    flex-direction : row;
     padding: 8px;
+    justify-content: center;
+  }
+
+  .Stars{
+    margin-top: 2%;
+    width: 33.3%;
+    justify-content: center;
+  }
+
+  .starImage{
+    margin: 0 auto;
+    max-width: 100%;
+    width: 50%;
+  }
+
+  .starImg{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  .qrImage{
+    margin: 0 auto;
+    max-width: 100%;
+    width: 35%;
+  }
+
+  .qrImg {
+    border: solid 1px white;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    /* margin: 0 0 16px; */
+    vertical-align: top;
+  }
+
+  .starName{
+    text-align: center;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', serif;
+    font-size: 170%;
+    font-weight: 300;
+    margin-top: 0;
+    margin: 0 auto;
   }
   
-  .qr {
+  /* .qr {
     border: solid 1px #37352f29;
     display: block;
     width: 25%;
@@ -40,8 +91,8 @@
   
   .qr-container img {
     max-width: 100%;
-    width: 100%;
+    width: 10%;
     height: auto;
     vertical-align: top;
   }
-  
+   */

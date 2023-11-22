@@ -43,10 +43,20 @@ const getContents = () => {
         mainElement.insertAdjacentHTML(
           'afterbegin',
 `
-<div id="star-${id}">
-  <div>${name}座</div>
-  <img src="${imageUrl}">
-  <img src="${qrCodeUrl}">
+<div id="star-${id}" class="Stars">
+
+
+  <div class="starImage">
+  <img src="${imageUrl}" class="starImg">
+  </div>
+
+  <div class="qrImage">
+  <img src="${qrCodeUrl}" class="qrImg">
+  </div>
+
+  <div class="starName">${name}座</div>
+  
+
 </div>
 `
         );

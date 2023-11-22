@@ -6,6 +6,7 @@ const startButton = document.querySelector('#js-start-button');
 const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
+const API_BASE_URL = 'https://8585yx3ghc.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 
 
@@ -583,6 +584,9 @@ buttonlist.forEach((button) => {
 // }
 
 
+
+
+
 //タイムラインの設定。インプットの中身を空にして、線を白紙にして、星の位置をリロードさせる。
 const tl = gsap.timeline({
     paused: true,
@@ -622,7 +626,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:10,
+    duration:30,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -645,7 +649,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:10,
+        duration:30,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -694,11 +698,37 @@ tl.fromTo(
             var data_url = canvas.canvas.toDataURL(mime_type);
             const url = (data_url);
             starImages.src = url;
-            console.log(data_url);//imgのsrcに指定する。
-            console.log(value);
+            // console.log(data_url);//imgのsrcに指定する。
+            // console.log(value);
+
+            
+
+                fetch(`${API_BASE_URL}/star`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    // 星座の名前
+                    name: (input.value),
+                    // 星座の画像データ（Base64 形式）
+                    image: (data_url),
+                    
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    if (data.status === 'OK') {
+                      console.log('星座を登録しました');
+                      console.log(data);
+                    }
+                  });
+            
 
         }
     }
+
+    
 );
 
 //「保存されました画面」を隠す。

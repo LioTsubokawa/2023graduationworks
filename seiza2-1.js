@@ -57,7 +57,7 @@ function uppdatePosition(){
         positions[i] = {
              img: images[randIndex],
              x:xPos,
-             y:yPos
+             y:yPos,
         }
     }
 }
@@ -81,6 +81,8 @@ function setup() {
     canvas = createCanvas(windowWidth,windowHeight);
     canvas.parent('js-canvas-container');
     background(29,46,92);
+
+    // imageMode(CENTER);
 
     //noLoop();
 
@@ -134,11 +136,12 @@ function mousePressed(){
             mouseY <= pos.y + imgHeight
         ){
             //星がクリックされたらここが動く。
-            clickPositions[clickPositions.length - 1].push({x:mouseX, y:mouseY});
+            clickPositions[clickPositions.length - 1].push({x:pos.x+(imgWidth / 2), y:pos.y+(imgHeight / 2)});
             //星が選ばれたらtrue
             console.log('星が選ばれました。')
             //falseをtrueにする。
             selected = true;
+            console.log(positions[i]);
         }
     }
     if(selected === false){
@@ -161,7 +164,7 @@ function draw() {
 //   let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
 //   let interA = lerpColor(from, to, elapsedTime / createTimer);
 //   background(interA);
-background(21,30,60);
+ background(21,30,60);
 
 //   if (elapsedTime > inputTimer) {
 //     // 名前を作る時間が終わった時の処理
@@ -183,8 +186,8 @@ background(21,30,60);
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 4.5;//クリックの判断サイズを画像サイズと同じにする。
-  imgHeight = images[0].height / 4.5;
+  imgWidth = images[0].width / 6;//クリックの判断サイズを画像サイズと同じにする。
+  imgHeight = images[0].height / 6;
 
   //星の画像を表示する。
   for (let i = 0; i < positions.length; i++) {
@@ -206,22 +209,33 @@ background(21,30,60);
     for (let j = 0; j < abc.length - 1; j++) {
     //   console.log(abc[j]);
 
+    //   if(
+    //     mouseX >= pos.x &&
+    //     mouseX <= pos.x + imgWidth &&
+    //     mouseY >= pos.y &&
+    //     mouseY <= pos.y + imgHeight){
+    //         startPos.x = images[randIndex].width-(images[randIndex].width/2)
+    //         endPos.x = images[randIndex].width-(images[randIndex].width/2)
+    //         startPos.y = images[randIndex].height-(images[randIndex].height/2)
+    //         endPos.y = images[randIndex].height-(images[randIndex].height/2)
+    //     }
+
       let startPos = abc[j];
       let endPos = abc[j + 1];
-      line(startPos.x, startPos.y, endPos.x, endPos.y);
+      line(startPos.x,startPos.y,endPos.x,endPos.y);
       strokeWeight(4);
       stroke(233, 232, 65);
     }
-}
-if (selected === true) {
+  }
+  if (selected === true) {
     image(
-      img,
-      imgX - img.width / 30,
-      imgY - img.height / 30,
-      img.width / 15,
-      img.height / 15
-    );
-}
+        img,
+        imgX - img.width / 30,
+        imgY - img.height / 30,
+        img.width / 15,
+        img.height / 15,
+      );
+  }
 
 //   image(img, imgX, imgY, img.width / 40, img.height / 40);
 
@@ -305,7 +319,7 @@ if (selected === true) {
 
 
 //決定ボタンの情報を読み込んでる。
-const buttonlist = document.querySelectorAll('.js-button');
+ const buttonlist = document.querySelectorAll('.js-button');
 
 
 
@@ -543,25 +557,29 @@ buttonlist.forEach((button) => {
               
             console.log(value);
             
-        }else if (value === 'けってい'){
-            // // let canvas = document.getElementById('seiza_img');
-            // // const ctx = canvas.canvas.getContext('2d');
-            // let mime_type = "image/png";
-            // var data_url = canvas.canvas.toDataURL(mime_type);
-            // // var base64 = window.btoa(data_url);
-            // //入力されている最後の文字に濁点の文字があるか
-            // // saveCanvas(canvas, ((input.value) + '座'), 'png');
-            // //var newImagePath = ((),png);
-            // // img = loadImage('change.png');
-            // // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
-            // const url = (data_url);
-            // starImages.src = url;
-            // console.log(data_url);//imgのsrcに指定する。
-            console.log(value);
+        }
+        
+        // else if (value === 'けってい'){
+        //     // let canvas = document.getElementById('seiza_img');
+        //     // const ctx = canvas.canvas.getContext('2d');
+        //     let mime_type = "image/png";
+        //     var data_url = canvas.canvas.toDataURL(mime_type);
+        //     // var base64 = window.btoa(data_url);
+        //     //入力されている最後の文字に濁点の文字があるか
+        //     // saveCanvas(canvas, ((input.value) + '座'), 'png');
+        //     //var newImagePath = ((),png);
+        //     // img = loadImage('change.png');
+        //     // image(img, 0, 0, width, height, 0, 0, img.width, img.height);
+        //     const url = (data_url);
+        //     starImages.src = url;
+        //     console.log(data_url);//imgのsrcに指定する。
+        //     console.log(value);
             
 
             
-        }else{
+        // }
+        
+        else{
             // コンソールログにメッセージを出力します
         console.log(value);
         input.value = ((input.value) + value);
@@ -626,7 +644,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:10,
+    duration:30,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -667,8 +685,8 @@ tl.to("#js-keyboard,#js-canvas-container" ,{
 });
 
 
-//スキップさせるコード
-tl.addLabel("skip-target");
+// //スキップさせるコード
+// tl.addLabel("skip-target");
 
 
 
@@ -701,7 +719,7 @@ tl.fromTo(
             // console.log(data_url);//imgのsrcに指定する。
             // console.log(value);
 
-            
+         
 
                 fetch(`${API_BASE_URL}/star`, {
                   method: 'POST',
@@ -710,7 +728,7 @@ tl.fromTo(
                   },
                   body: JSON.stringify({
                     // 星座の名前
-                    name: (input.value),
+                    name: input.value.lengt > 0 ? input.value : 'ななし',
                     // 星座の画像データ（Base64 形式）
                     image: (data_url),
                     
@@ -762,9 +780,9 @@ startButton.addEventListener('click', (e) => {
 });
 
 
-ketteiButton.addEventListener("click", () => {
-    tl.seek("skip-target");
-});
+// ketteiButton.addEventListener("click", () => {
+//     tl.seek("skip-target");
+// });
 
 
 // document.getElementById("#myStar").textContent = '';

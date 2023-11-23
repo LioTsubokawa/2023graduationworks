@@ -1,3 +1,7 @@
+.body{
+  background-color: black;  
+}
+
 .header {
     background-color: black;
     border-bottom: solid 1px white;
@@ -31,7 +35,7 @@
   .starImage{
     margin: 0 auto;
     max-width: 100%;
-    width: 50%;
+    width: 70%;
   }
 
   .starImg{
@@ -44,7 +48,7 @@
   .qrImage{
     margin: 0 auto;
     max-width: 100%;
-    width: 35%;
+    width: 30%;
   }
 
   .qrImg {

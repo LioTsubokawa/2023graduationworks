@@ -15,6 +15,7 @@
 }
 
 .canvas-container {
+    /* ゼットインデックス３ */
     position: absolute;
     width: 95%;
     height: 95%;
@@ -33,7 +34,7 @@
 } */
 
 #key-input2 {
-    margin-top: 7.5%;
+    margin-top: 7%;
     color: white;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .key-input {
-    margin-top: 2.5%;
+    margin-top: 3%;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
@@ -50,6 +51,8 @@
 }
 
 .keyboard {
+    /* ゼットインデックス４ */
+    /* ６３と６４のコメントアウトは解除すること！ */
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     width: 100%;
@@ -60,7 +63,7 @@
     z-index: 4;
     opacity: 0;
     visibility: hidden;
-    //*transition: 
+    /*transition: 
     visibility 0.4s 0.4s,
     opacity 0.4s ease-in; */
     
@@ -161,6 +164,7 @@ ul {
 }
 
 .change {
+    /* ゼットインデックス１ */
     justify-content: center;
     position: absolute;
     width: 100%;
@@ -170,6 +174,7 @@ ul {
 }
 
 .start{
+    /* ゼットインデックス６ */
     justify-content: center;
     position: absolute;
     width: 100%;
@@ -178,6 +183,7 @@ ul {
     top: 0;
 }
 .start_backimage {
+    /* ゼットインデックス１ */
     justify-content: center;
     position: absolute;
     width: 100%;
@@ -187,6 +193,7 @@ ul {
 }
 
 .start_button {
+    /* ゼットインデックス２ */
     justify-content: center;
     position: absolute;
     z-index: 2; 
@@ -196,13 +203,13 @@ ul {
 }
 
 .save {
+    /* ゼットインデックス２ */
     background-image: url('save.png');
     background-size: 100% 100%;
     justify-content: center;
     position: absolute;
     width: 100%;
     height: 100%;
-    /* ↓もともとは2 */
     z-index: 2; 
     top: 0;
 }
@@ -227,6 +234,7 @@ ul {
 }
 
 .save_contents{
+    /* ゼットインデックス２ */
     display: flex;
     justify-content: center;
     /* position: absolute; */
@@ -269,6 +277,7 @@ ul {
 }
 
 .timer {
+    /* ゼットインデックス５ */
     width: 120px;
     height: 120px;
     border-radius: 100%;
@@ -283,8 +292,8 @@ ul {
     background-image: url('button/a.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 } 
   
@@ -292,8 +301,8 @@ ul {
     background-image: url('button/i.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 } 
@@ -302,8 +311,8 @@ ul {
     background-image: url('button/u.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 } 
@@ -312,8 +321,8 @@ ul {
     background-image: url('button/e.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 } 
@@ -322,8 +331,8 @@ ul {
     background-image: url('button/o.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -332,8 +341,8 @@ ul {
     background-image: url('button/ka.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -341,8 +350,8 @@ ul {
     background-image: url('button/ki.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -351,8 +360,8 @@ ul {
     background-image: url('button/ku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -361,8 +370,8 @@ ul {
     background-image: url('button/ke.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -371,8 +380,8 @@ ul {
     background-image: url('button/ko.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -381,8 +390,8 @@ ul {
     background-image: url('button/sa.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -390,8 +399,8 @@ ul {
     background-image: url('button/si.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -400,8 +409,8 @@ ul {
     background-image: url('button/su.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -410,8 +419,8 @@ ul {
     background-image: url('button/se.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -420,8 +429,8 @@ ul {
     background-image: url('button/so.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -430,8 +439,8 @@ ul {
     background-image: url('button/ta.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -439,8 +448,8 @@ ul {
     background-image: url('button/ti.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -449,8 +458,8 @@ ul {
     background-image: url('button/tu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -459,8 +468,8 @@ ul {
     background-image: url('button/te.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -469,8 +478,8 @@ ul {
     background-image: url('button/to.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -479,8 +488,8 @@ ul {
     background-image: url('button/na.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -488,8 +497,8 @@ ul {
     background-image: url('button/ni.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -498,8 +507,8 @@ ul {
     background-image: url('button/nu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -508,8 +517,8 @@ ul {
     background-image: url('button/ne.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -518,8 +527,8 @@ ul {
     background-image: url('button/no.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -528,8 +537,8 @@ ul {
     background-image: url('button/ha.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -537,8 +546,8 @@ ul {
     background-image: url('button/hi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -547,8 +556,8 @@ ul {
     background-image: url('button/hu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -557,8 +566,8 @@ ul {
     background-image: url('button/he.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -567,8 +576,8 @@ ul {
     background-image: url('button/ho.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -577,8 +586,8 @@ ul {
     background-image: url('button/ma.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -586,8 +595,8 @@ ul {
     background-image: url('button/mi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -596,8 +605,8 @@ ul {
     background-image: url('button/mu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -606,8 +615,8 @@ ul {
     background-image: url('button/me.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -616,8 +625,8 @@ ul {
     background-image: url('button/mo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -626,8 +635,8 @@ ul {
     background-image: url('button/ya.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -636,8 +645,8 @@ ul {
     background-image: url('button/yu.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -647,8 +656,8 @@ ul {
     background-image: url('button/yo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px ;
     border: none;
     margin-top: 15px;
 }
@@ -657,8 +666,8 @@ ul {
     background-image: url('button/ra.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -666,8 +675,8 @@ ul {
     background-image: url('button/ri.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -676,8 +685,8 @@ ul {
     background-image: url('button/ru.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -686,8 +695,8 @@ ul {
     background-image: url('button/re.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -696,8 +705,8 @@ ul {
     background-image: url('button/ro.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -706,8 +715,8 @@ ul {
     background-image: url('button/wa.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
 }
 
@@ -716,8 +725,8 @@ ul {
     background-image: url('button/wo.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -727,8 +736,8 @@ ul {
     background-image: url('button/nn.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -737,18 +746,18 @@ ul {
     background-image: url('button/mojikesi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 143px;
-    height: 118px;
+    width: 133px;
+    height: 108px;
     border: none;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .dakuten-button {
     background-image: url('button/daku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-left: 30px;
     margin-top: 2px;
@@ -758,8 +767,8 @@ ul {
     background-image: url('button/handaku.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     border: none;
     margin-left: 30px;
     margin-top: 15px;
@@ -769,8 +778,8 @@ ul {
     background-image: url('button/komoji.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 205px;
-    height: 102px;
+    width: 195px;
+    height: 92px;
     border: none;
     margin-top: 15px;
 }
@@ -779,19 +788,19 @@ ul {
     background-image: url('button/nobasi.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 102px;
-    height: 102px;
+    width: 92px;
+    height: 92px;
     margin-left: 30px;
     border: none;
     margin-top: 15px;
 }
 
-.kettei-button {
+/* .kettei-button {
     background-image: url('button/kettei.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 135px;
-    height: 102px;
+    width: 125px;
+    height: 92px;
     border: none;
     bottom: 0;
     margin-left: 40px;
@@ -800,4 +809,4 @@ ul {
 .hozon-button{
     display: flex;
     align-items: flex-end;
-}
+} */

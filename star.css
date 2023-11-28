@@ -53,7 +53,7 @@
 .keyboard {
     /* ゼットインデックス４ */
     /* ６３と６４のコメントアウトは解除すること！ */
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -249,10 +249,10 @@ ul {
 .save_title2{
     /* justify-content: center; */
     /* font-size: 30%; */
-    width: 25%;
+    width: 30%;
     color: white;
     font-size: 28px;
-    margin-top: 9.5%;
+    margin-top: 7%;
     
     /* z-index: 2;
     top: 80%;
@@ -262,6 +262,8 @@ ul {
 .save_seiza{
     width: 40%;
     margin-right: 8%;
+    border: solid;
+    border-color: #FFF;
     /* z-index: 2; */
 }
 

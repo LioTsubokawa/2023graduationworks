@@ -6,7 +6,7 @@ const startButton = document.querySelector('#js-start-button');
 const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
-const API_BASE_URL = 'https://8585yx3ghc.execute-api.ap-northeast-1.amazonaws.com/dev';
+const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 
 
@@ -142,6 +142,7 @@ function mousePressed(){
             //falseをtrueにする。
             selected = true;
             console.log(positions[i]);
+            break;
         }
     }
     if(selected === false){
@@ -186,8 +187,8 @@ function draw() {
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 6;//クリックの判断サイズを画像サイズと同じにする。
-  imgHeight = images[0].height / 6;
+  imgWidth = images[0].width / 7;//クリックの判断サイズを画像サイズと同じにする。
+  imgHeight = images[0].height / 7;
 
   //星の画像を表示する。
   for (let i = 0; i < positions.length; i++) {
@@ -196,8 +197,8 @@ function draw() {
       pos.img,
       pos.x,
       pos.y,
-      images[randIndex].width / 5,//画像の幅を5分の1にする。
-      images[randIndex].height / 5//画像の高さを5分の1にする。
+      images[randIndex].width / 7,//画像の幅を5分の1にする。
+      images[randIndex].height / 7,//画像の高さを5分の1にする。
     );
   }
 
@@ -667,7 +668,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:10,
+        duration:30,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -704,7 +705,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:10,
+        duration:30,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
         onStart: () => {
@@ -728,7 +729,7 @@ tl.fromTo(
                   },
                   body: JSON.stringify({
                     // 星座の名前
-                    name: input.value.lengt > 0 ? input.value : 'ななし',
+                    name: input.value.length > 0 ? input.value : 'ななし',
                     // 星座の画像データ（Base64 形式）
                     image: (data_url),
                     

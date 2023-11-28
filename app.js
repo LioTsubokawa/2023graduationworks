@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://8585yx3ghc.execute-api.ap-northeast-1.amazonaws.com/dev';
+const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 /**
  * sha256

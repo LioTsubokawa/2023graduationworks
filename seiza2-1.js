@@ -1,5 +1,9 @@
 // const { start } = require("repl");
 
+
+
+
+
 const keyboard = document.querySelector('#js-keyboard');
 const input = document.querySelector('#myInput');
 const startButton = document.querySelector('#js-start-button');
@@ -45,6 +49,16 @@ let selected =false;
 
 let cx, cy;
 let secondsRadius;
+
+const bgm = new Howl({
+    autoplay :true,
+    src: ['audio.mp3'],
+    loop:true,
+});
+
+const selectSE = new Howl({
+    src : ['star.mp3'],
+});
 
 //星の座標を更新する。
 function uppdatePosition(){
@@ -135,6 +149,7 @@ function mousePressed(){
             mouseY >= pos.y &&
             mouseY <= pos.y + imgHeight
         ){
+            selectSE.play();
             //星がクリックされたらここが動く。
             clickPositions[clickPositions.length - 1].push({x:pos.x+(imgWidth / 2), y:pos.y+(imgHeight / 2)});
             //星が選ばれたらtrue

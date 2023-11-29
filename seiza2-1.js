@@ -12,7 +12,7 @@ const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
-
+const stars = [];
 
 let images = [];
 let imgCount = 5;//星の種類。
@@ -62,17 +62,24 @@ const selectSE = new Howl({
 
 //星の座標を更新する。
 function uppdatePosition(){
+
+    stars.splice(0,stars.length);
+
+
     //星の画像（種類）と座標を決める。
     for(let i = 0; i < numImages; i++){
         const randIndex = int(random(images.length));
         const xPos = random(width);
         const yPos = random(height);
+
+        //星を作る
+        stars.push(new Star(xPos,yPos,images[randIndex]));
         
-        positions[i] = {
-             img: images[randIndex],
-             x:xPos,
-             y:yPos,
-        }
+        // positions[i] = {
+        //      img: images[randIndex],
+        //      x:xPos,
+        //      y:yPos,
+        // }
     }
 }
 
@@ -80,10 +87,10 @@ function uppdatePosition(){
 
 function preload() {
 
+    img = loadImage('stargradation3.png')
+
     for(let i = 0; i < imgCount; i++){
         images[i] = loadImage('star' + i + '.png')
-
-        img = loadImage('stargradation3.png')
 
     }
 
@@ -139,19 +146,24 @@ console.log("Image clicked!")
 
 function mousePressed(){
     selected = false;
-    for(let i = 0; i < positions.length; i++){
-        const pos = positions[i];
+    for(let i = 0; i < stars.length; i++){
+        const star = stars[i];
 
         //星が選ばれているか？
         if(
-            mouseX >= pos.x &&
-            mouseX <= pos.x + imgWidth &&
-            mouseY >= pos.y &&
-            mouseY <= pos.y + imgHeight
+            mouseX >= star.x - imgWidth * 0.5&&
+            mouseX <= star.x + imgWidth * 0.5&&
+            mouseY >= star.y - imgHeight * 0.5&&
+            mouseY <= star.y + imgHeight * 0.5
         ){
             selectSE.play();
+            star.select();
             //星がクリックされたらここが動く。
-            clickPositions[clickPositions.length - 1].push({x:pos.x+(imgWidth / 2), y:pos.y+(imgHeight / 2)});
+            clickPositions[clickPositions.length - 1].push({
+                x:star.x, 
+                y:star.y,
+            });
+
             //星が選ばれたらtrue
             console.log('星が選ばれました。')
             //falseをtrueにする。
@@ -171,55 +183,62 @@ function mousePressed(){
 
 
 function draw() {
-    
-//   // 経過時間
-//   elapsedTime = millis() - startTime;
 
-//   let from = color(29, 46, 92);
-//   let to = color(153, 198, 250);
-//   let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
-//   let interA = lerpColor(from, to, elapsedTime / createTimer);
-//   background(interA);
+    //星座を１つずつ更新する
+    stars.forEach((star)=>{
+        star.update();
+    });
+    
+    //   // 経過時間
+    //   elapsedTime = millis() - startTime;
+
+    //   let from = color(29, 46, 92);
+    //   let to = color(153, 198, 250);
+    //   let progress = elapsedTime / createTimer; // 「星座を作る」や「名前を作る」の進捗率 0.0 ~ 1.0
+    //   let interA = lerpColor(from, to, elapsedTime / createTimer);
+    //   background(interA);
  background(21,30,60);
 
-//   if (elapsedTime > inputTimer) {
-//     // 名前を作る時間が終わった時の処理
-//     keyboard.classList.remove('keyboard-show');
-//     // 名前をリセット
-//     input.value = '';
-//     // タイマーをリセット
-//     startTime = millis();
-//     // ここで画像を送る処理をする
-//   } else if (elapsedTime > createTimer) {
-//     // 星座を作る時間が終わった時の処理
-//     keyboard.classList.add('keyboard-show');
-//     progress = (elapsedTime - createTimer) / (inputTimer - createTimer);
-//   }
+    //   if (elapsedTime > inputTimer) {
+    //     // 名前を作る時間が終わった時の処理
+    //     keyboard.classList.remove('keyboard-show');
+    //     // 名前をリセット
+    //     input.value = '';
+    //     // タイマーをリセット
+    //     startTime = millis();
+    //     // ここで画像を送る処理をする
+    //   } else if (elapsedTime > createTimer) {
+    //     // 星座を作る時間が終わった時の処理
+    //     keyboard.classList.add('keyboard-show');
+    //     progress = (elapsedTime - createTimer) / (inputTimer - createTimer);
+    //   }
 
-  // background(29,46,92);
+    // background(29,46,92);
 
-  let randIndex = int(random(images.length));
+    //   let randIndex = int(random(images.length));
 
   // stroke(233,232,65);
   //０番目の画像の大きさの基準にする
-  imgWidth = images[0].width / 7;//クリックの判断サイズを画像サイズと同じにする。
-  imgHeight = images[0].height / 7;
+  imgWidth = images[0].width * 0.14;
+  imgHeight = images[0].height * 0.14;//画像のサイズを0.14倍にする。（約７分の１）
 
-  //星の画像を表示する。
-  for (let i = 0; i < positions.length; i++) {
-    let pos = positions[i];
-    image(
-      pos.img,
-      pos.x,
-      pos.y,
-      images[randIndex].width / 7,//画像の幅を5分の1にする。
-      images[randIndex].height / 7,//画像の高さを5分の1にする。
-    );
-  }
+
+
+//星の画像を表示する。
+// for (let i = 0; i < positions.length; i++) {
+//     let pos = positions[i];
+//     image(
+//       pos.img,
+//       pos.x,
+//       pos.y,
+//       images[randIndex].width / 7,//画像の幅を5分の1にする。
+//       images[randIndex].height / 7,//画像の高さを5分の1にする。
+//     );
+// }
 
 
   //↓線結んでるコード
-  for (let i = 0; i < clickPositions.length; i++) {
+for (let i = 0; i < clickPositions.length; i++) {
     let abc = clickPositions[i];
     // var abc = [clickPositions];
     for (let j = 0; j < abc.length - 1; j++) {
@@ -242,8 +261,15 @@ function draw() {
       strokeWeight(4);
       stroke(233, 232, 65);
     }
-  }
-  if (selected === true) {
+}
+
+//星の座標を１つずつ描画する。
+stars.forEach((star)=>{
+    star.draw();
+});
+
+
+if (selected === true) {
     image(
         img,
         imgX - img.width / 30,
@@ -251,7 +277,7 @@ function draw() {
         img.width / 15,
         img.height / 15,
       );
-  }
+}
 
 //   image(img, imgX, imgY, img.width / 40, img.height / 40);
 
@@ -660,7 +686,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:30,
+    duration:5,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -683,7 +709,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:30,
+        duration:5,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -720,7 +746,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:30,
+        duration:5,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
         onStart: () => {

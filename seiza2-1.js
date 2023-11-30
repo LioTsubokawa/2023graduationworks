@@ -13,6 +13,7 @@ const starImages = document.querySelector('#seiza_img');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 const stars = [];
+const lines = [];
 let isCreateMode = false;//星座を作っている画面ではtrueになる。
 
 let images = [];
@@ -158,13 +159,30 @@ function mousePressed(){
             mouseY <= star.y + imgHeight * 0.5&&
             isCreateMode
         ){
+            const index = clickPositions.length - 1;
+            
             selectSE.play();
             star.select();
+            
             //星がクリックされたらここが動く。
-            clickPositions[clickPositions.length - 1].push({
-                x:star.x, 
-                y:star.y,
+            clickPositions[index].push({
+              x: star.x,
+              y: star.y,
             });
+
+            const positionsLength = clickPositions[index].length;
+            const lastIndex = positionsLength - 1;
+            
+            if (positionsLength >= 1) {
+                lines.push(
+                  new Line(
+                    clickPositions[index][lastIndex - 1].x,
+                    clickPositions[index][lastIndex - 1].y,
+                    clickPositions[index][lastIndex].x,
+                    clickPositions[index][lastIndex].y
+                  )
+                );
+            }
 
             //星が選ばれたらtrue
             console.log('星が選ばれました。')
@@ -265,6 +283,11 @@ for (let i = 0; i < clickPositions.length; i++) {
       stroke(233, 232, 65);
     }
 }
+
+//線を１つずつ描画する。
+lines.forEach((line) => {
+  line.draw();
+});
 
 //星の座標を１つずつ描画する。
 stars.forEach((star)=>{
@@ -677,6 +700,9 @@ tl.to("#js-start", {
     duration: 3,
     autoAlpha:0,
     ease: "power3.out",
+    onStart: () => {
+        isCreateMode = true;
+    }
 });
 
 //タイマーを表示させる。
@@ -692,9 +718,6 @@ tl.to('#js-timer',{
     duration:5,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
-    onStart: () => {
-        isCreateMode = true;
-    }
 });
 
 

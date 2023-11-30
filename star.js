@@ -15,7 +15,7 @@ class Star {
       this.selectAnimate = gsap.to(this.states, {
         duration: 0.4,
         // delay:'random(0,0.4)',
-        scale:'random(0.8,1.2)',
+        scale: 0.8,
         repeat: 1,
         paused:true,//自動再生しない
         yoyo:true,

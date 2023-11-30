@@ -1,22 +1,29 @@
 class Line{
+  constructor(x0, y0, x1, y1) {
+    this.states = {
+      x0,
+      y0,
+      x1,
+      y1,
+    };
 
-    constructor(x,y) {
-        this.x0 = start.x;
-        this.y0 = start.y;
-        this.x1 = end.x;
-        this.y1 = end.y; // プロパティの定義
-        
-  
-        //アニメーションの定義。
-        this.selectAnimate = gsap.to(this.states, {
-          duration: 0.4,
-          // delay:'random(0,0.4)',
-          scale:'random(0.8,1.2)',
-          repeat: 1,
-          paused:true,//自動再生しない
-          yoyo:true,
-          ease: "power3.out",
-        });
+    //アニメーションの定義。
+    this.animate = gsap.from(
+      this.states,
+      {
+        duration: 0.4,
+        x1: x0,
+        y1: y0,
+        ease: 'power3.out',
       }
+    );
+  }
     
+  draw () {
+    push();
+    stroke(255);
+    strokeWeight(20);
+    line(this.states.x0, this.states.y0, this.states.x1, this.states.y1);
+    pop();
+  }
 }

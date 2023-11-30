@@ -19,6 +19,7 @@ class Star {
         repeat: 1,
         paused:true,//自動再生しない
         yoyo:true,
+        ease: "power3.out",
       });
     }
 

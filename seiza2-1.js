@@ -13,6 +13,7 @@ const starImages = document.querySelector('#seiza_img');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 const stars = [];
+let isCreateMode = false;//星座を作っている画面ではtrueになる。
 
 let images = [];
 let imgCount = 5;//星の種類。
@@ -154,7 +155,8 @@ function mousePressed(){
             mouseX >= star.x - imgWidth * 0.5&&
             mouseX <= star.x + imgWidth * 0.5&&
             mouseY >= star.y - imgHeight * 0.5&&
-            mouseY <= star.y + imgHeight * 0.5
+            mouseY <= star.y + imgHeight * 0.5&&
+            isCreateMode
         ){
             selectSE.play();
             star.select();
@@ -241,19 +243,20 @@ function draw() {
 for (let i = 0; i < clickPositions.length; i++) {
     let abc = clickPositions[i];
     // var abc = [clickPositions];
-    for (let j = 0; j < abc.length - 1; j++) {
-    //   console.log(abc[j]);
+    
+        for (let j = 0; j < abc.length - 1; j++) {
+        //   console.log(abc[j]);
 
-    //   if(
-    //     mouseX >= pos.x &&
-    //     mouseX <= pos.x + imgWidth &&
-    //     mouseY >= pos.y &&
-    //     mouseY <= pos.y + imgHeight){
-    //         startPos.x = images[randIndex].width-(images[randIndex].width/2)
-    //         endPos.x = images[randIndex].width-(images[randIndex].width/2)
-    //         startPos.y = images[randIndex].height-(images[randIndex].height/2)
-    //         endPos.y = images[randIndex].height-(images[randIndex].height/2)
-    //     }
+        //   if(
+        //     mouseX >= pos.x &&
+        //     mouseX <= pos.x + imgWidth &&
+        //     mouseY >= pos.y &&
+        //     mouseY <= pos.y + imgHeight){
+        //         startPos.x = images[randIndex].width-(images[randIndex].width/2)
+        //         endPos.x = images[randIndex].width-(images[randIndex].width/2)
+        //         startPos.y = images[randIndex].height-(images[randIndex].height/2)
+        //         endPos.y = images[randIndex].height-(images[randIndex].height/2)
+        //     }
 
       let startPos = abc[j];
       let endPos = abc[j + 1];
@@ -689,6 +692,9 @@ tl.to('#js-timer',{
     duration:5,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
+    onStart: () => {
+        isCreateMode = true;
+    }
 });
 
 
@@ -698,6 +704,9 @@ tl.to("#js-keyboard", {
     duration: 3,
     autoAlpha:1,
     ease: "power3.out",
+    onStart: () => {
+        isCreateMode = false;
+    }
 });
 
 

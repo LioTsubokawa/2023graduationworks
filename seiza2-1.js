@@ -275,9 +275,9 @@ for (let i = 0; i < clickPositions.length; i++) {
 
       let startPos = abc[j];
       let endPos = abc[j + 1];
-      line(startPos.x,startPos.y,endPos.x,endPos.y);
-      strokeWeight(4);
-      stroke(233, 232, 65);
+    //   line(startPos.x,startPos.y,endPos.x,endPos.y);
+    //   strokeWeight(4);
+    //   stroke(233, 232, 65);
     }
 }
 

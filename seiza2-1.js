@@ -61,6 +61,8 @@ const selectSE = new Howl({
 function uppdatePosition(){
 
     stars.splice(0,stars.length);
+    lines.splice(0,lines.length);
+    
 
 
     //星の画像（種類）と座標を決める。
@@ -713,7 +715,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:5,
+    duration:40,
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -739,7 +741,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:5,
+        duration:35,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }
@@ -776,7 +778,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:5,
+        duration:10,
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
         onStart: () => {

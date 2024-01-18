@@ -192,14 +192,30 @@ ul {
     top: 0;
 }
 
+.start_button0 {
+    position: absolute;
+    z-index: 2;
+    top: 68%;
+    left: 50%;
+    translate: -50%;
+}
+
+.start_button1 {
+    position: absolute;
+    z-index: 2;
+    top: 51%;
+    left: 50%;
+    translate: -50%;
+}
+
 .start_a {
     /* ゼットインデックス２ */
-    justify-content: center;
+    /* justify-content: center;
     position: absolute;
     z-index: 2; 
     top: 51%;
     left: 50%;
-    translate: -50%;
+    translate: -50%; */
 }
 
 .start_b {

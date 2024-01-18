@@ -1,7 +1,8 @@
 
 const keyboard = document.querySelector('#js-keyboard');
 const input = document.querySelector('#myInput');
-const startButton = document.querySelector('#js-start-button');
+const startButton0 = document.querySelector('#js-start-button0');
+const startButton1 = document.querySelector('#js-start-button1');
 const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
@@ -688,8 +689,8 @@ const state = {
 };
 
 //スタートボタンが消える。
-tl.to("#js-start-button", {
-    duration: 3,
+tl.to("#js-start-button0, #js-start-button1", {
+    duration: 10,
     autoAlpha:0,
     ease: "power3.out",
 });
@@ -842,10 +843,19 @@ tl.to("#js-start, #js-start-button", {
     ease: "power3.in",
 });
 
-console.log(startButton);
+console.log(startButton0);
+console.log(startButton1);
 
 //スタートボタンが押されたらコンソールログをだす。
-startButton.addEventListener('click', (e) => {
+startButton0.addEventListener('click', (e) => {
+
+    console.log('スタートボタンが押されました。');
+
+    tl.play(0);
+    
+});
+
+startButton1.addEventListener('click', (e) => {
 
     console.log('スタートボタンが押されました。');
 

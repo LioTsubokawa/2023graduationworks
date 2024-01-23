@@ -8,6 +8,39 @@ const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
+const STAR_ATLAS = [
+    { x:0.04, y:0.3, s:0},//1
+    { x:0.07, y:0.68, s:1},//2
+    { x:0.21, y:0.31, s:3},//3
+    { x:0.23, y:0.33, s:3},//4
+    { x:0.22, y:0.37, s:3},//5
+    { x:0.19, y:0.34, s:4},//6
+    { x:0.32, y:0.27, s:0},//7
+    { x:0.35, y:0.23, s:1},//8
+    { x:0.43, y:0.46, s:1},//9
+    { x:0.30, y:0.59, s:0},//10
+    { x:0.51, y:0.59, s:0},//11
+    { x:0.41, y:0.92, s:0},//12
+    { x:0.56, y:0.06, s:0},//13
+    { x:0.57, y:0.61, s:1},//14
+    { x:0.56, y:0.69, s:2},//15
+    { x:0.55, y:0.71, s:3},//16
+    { x:0.54, y:0.72, s:3},//17
+    { x:0.52, y:0.83, s:1},//18
+    { x:0.59, y:0.79, s:0},//19
+    { x:0.76, y:0.84, s:2},//20
+    { x:0.79, y:0.62, s:4},//21
+    { x:0.73, y:0.57, s:4},//22
+    { x:0.80, y:0.48, s:3},//23
+    { x:0.65, y:0.45, s:0},//24
+    { x:0.95, y:0.57, s:4},//25
+    { x:0.80, y:0.32, s:2},//26
+    { x:0.93, y:0.20, s:2},//27
+    { x:0.92, y:0.18, s:1},//28
+    { x:0.89, y:0.17, s:0},//29
+    { x:0.56, y:0.30, s:0},//30
+]
+
 const stars = [];
 const lines = [];
 let isCreateMode = false;//星座を作っている画面ではtrueになる。
@@ -682,6 +715,8 @@ const tl = gsap.timeline({
         uppdatePosition();
         console.log('タイムラインがはじまった')
         starName.textContent = 'ななし';
+        // console.log(startButton0);
+        // console.log(startButton1);
     }
 });
 const state = {
@@ -843,13 +878,12 @@ tl.to("#js-start, #js-start-button", {
     ease: "power3.in",
 });
 
-console.log(startButton0);
-console.log(startButton1);
+
 
 //スタートボタンが押されたらコンソールログをだす。
 startButton0.addEventListener('click', (e) => {
 
-    console.log('スタートボタンが押されました。');
+    console.log('架空の星空ボタンが押されました。');
 
     tl.play(0);
     
@@ -857,7 +891,7 @@ startButton0.addEventListener('click', (e) => {
 
 startButton1.addEventListener('click', (e) => {
 
-    console.log('スタートボタンが押されました。');
+    console.log('今月の星空ボタンが押されました。');
 
     tl.play(0);
     

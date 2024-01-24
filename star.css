@@ -14,6 +14,10 @@
     position: relative;
 }
 
+.save_B_Images .save_B{
+    display: none;
+}
+
 .canvas-container {
     /* ゼットインデックス３ */
     position: absolute;
@@ -254,7 +258,8 @@ ul {
     /* position: absolute; */
     color: white;
     z-index: 2;
-    margin-bottom: 3%;
+    /* margin-top: 1%; */
+    margin-bottom: 4%;
     top: 15%;
     left: 40%;
 }
@@ -273,13 +278,15 @@ ul {
 
 
 .save_title2{
-    /* justify-content: center; */
+    /* justify-content: center;  */
     /* font-size: 30%; */
+    display: flex;
+    justify-content: center;
     width: 30%;
     color: white;
     font-size: 28px;
-    margin-top: 7%;
-    
+    margin-top: 3%;
+    margin-left: 38%;
     /* z-index: 2;
     top: 80%;
     right: 13%; */
@@ -287,12 +294,20 @@ ul {
 
 .save_seiza{
     width: 40%;
-    margin-right: 8%;
+    /* margin-right: 8%; */
+    /* margin-left: 3%; */
     border: solid;
     border-color: #FFF;
     /* z-index: 2; */
 }
 
+.save_B{
+    width: 40%;
+    /* margin-right: 70%; */
+    margin-left: 4%;
+    border: solid;
+    border-color: #FFF;
+}
 /* .save_qr{
     width: 100%;
     z-index: 2; 
@@ -312,7 +327,7 @@ ul {
     background-image: conic-gradient(#ff6161 0deg, #ccc 0deg);
     position: absolute;
     top: 3%;
-    left: 92%;
+    left: 91%;
     z-index: 5;
   }
 

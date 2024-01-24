@@ -766,7 +766,7 @@ tl.to("#js-timer", {
 
 //タイマーの設定。星座作るときのタイマー。
 tl.to('#js-timer',{
-    duration:40,//40
+    duration:15,//40
     backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
     ease :'none',
 });
@@ -792,7 +792,7 @@ tl.fromTo(
         backgroundImage: 'conic-gradient(#FDAE66 0deg, #ccc 0deg)',
     },
     {
-        duration:35,//35
+        duration:5,//35
         backgroundImage: 'conic-gradient(#FDAE66 360deg, #ccc 360deg)',
         ease :'none',
     }

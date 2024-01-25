@@ -902,9 +902,6 @@ startButton0.addEventListener('click', (e) => {
 
     console.log('架空の星空ボタンが押されました。');
     save_bImages.classList.add("save_B_Images");
-    text_3_a.classList.add("text_3_b");
-    
-
     atlasMode = false;
     tl.play(0);
     
@@ -914,8 +911,6 @@ startButton1.addEventListener('click', (e) => {
 
     console.log('今月の星空ボタンが押されました。');
     save_bImages.classList.remove("save_B_Images");
-    text_3_a.classList.remove("text_3_b");
-
     atlasMode = true;
     tl.play(0);
     

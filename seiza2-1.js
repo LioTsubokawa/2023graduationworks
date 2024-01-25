@@ -7,7 +7,7 @@ const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
 const save_bImages = document.querySelector('#js-body');
-const text_3_a = document.querySelector('#save_1');
+// const text_3_a = document.querySelector('#save_1');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 const STAR_ATLAS = [

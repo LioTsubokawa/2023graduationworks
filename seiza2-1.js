@@ -7,6 +7,7 @@ const ketteiButton = document.querySelector('#kettei');
 const starName = document.querySelector('#myStar');
 const starImages = document.querySelector('#seiza_img');
 const save_bImages = document.querySelector('#js-body');
+const text_3_a = document.querySelector('#save_1');
 const API_BASE_URL = 'https://28o7sq3hdf.execute-api.ap-northeast-1.amazonaws.com/dev';
 
 const STAR_ATLAS = [
@@ -901,6 +902,7 @@ startButton0.addEventListener('click', (e) => {
 
     console.log('架空の星空ボタンが押されました。');
     save_bImages.classList.add("save_B_Images");
+    text_3_a.classList.add("text_3_b");
     
 
     atlasMode = false;
@@ -912,6 +914,7 @@ startButton1.addEventListener('click', (e) => {
 
     console.log('今月の星空ボタンが押されました。');
     save_bImages.classList.remove("save_B_Images");
+    text_3_a.classList.remove("text_3_b");
 
     atlasMode = true;
     tl.play(0);

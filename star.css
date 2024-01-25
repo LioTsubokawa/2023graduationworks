@@ -14,7 +14,11 @@
     position: relative;
 }
 
-.save_B_Images .save_B .text_3_b .text_3{
+.save_B_Images .save_B {
+    display: none;
+}
+
+.save_B_Images  .text_3_b {
     display: none;
 }
 
@@ -278,11 +282,11 @@ ul {
     /* font-size: 30%; */
     /* display: flex;
     justify-content: center; */
-    width: 30%;
+    width: 100%;
     color: white;
     font-size: 28px;
     margin-top: 3%;
-    margin-left: 38%;
+    /* margin-left: 38%; */
     /* z-index: 2;
     top: 80%;
     right: 13%; */
@@ -291,9 +295,9 @@ ul {
 .save_contents2{
     /* ゼットインデックス２ */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     /* position: absolute; */
-    width: 90%;
+    width: 100%;
     color: white;
     z-index: 2;
     top: 0;
@@ -307,11 +311,11 @@ ul {
     /* font-size: 30%; */
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 100%;
     color: white;
     font-size: 28px;
     margin-top: 3%;
-    margin-left: 38%;
+    /* margin-left: 38%; */
     /* z-index: 2;
     top: 80%;
     right: 13%; */

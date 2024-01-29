@@ -14,13 +14,13 @@
     position: relative;
 }
 
-.save_B_Images .save_B {
+.save_B_Images .save_contents2 {
     display: none;
 }
 
-.save_B_Images  .text_3_b {
+/* .save_B_Images  .text_3_b {
     display: none;
-}
+} */
 
 .canvas-container {
     /* ゼットインデックス３ */
@@ -271,7 +271,10 @@ ul {
 .save_contents1{
     /* ゼットインデックス２ */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     /* position: absolute; */
     /* width: 100%;
     color: white; */
@@ -294,16 +297,30 @@ ul {
 }
 
 .save_contents2{
-    /* ゼットインデックス２ */
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     /* position: absolute; */
-    width: 100%;
-    color: white;
+    /* width: 100%;
+    color: white; */
     z-index: 2;
-    top: 0;
-    right: 0;
-    margin-right: 40%;
+    /* top: 0;
+    right: 0; */
+    /* justify-content: center;  */
+    /* font-size: 30%; */
+    /* display: flex;
+    justify-content: center; */
+    width: 80%;
+    color: white;
+    font-size: 28px;
+    margin-top: 3%;
+    margin-bottom: 0.5%;
+    /* margin-left: 38%; */
+    /* z-index: 2;
+    top: 80%;
+    right: 13%; */
 }
 
 
@@ -323,7 +340,7 @@ ul {
 }
 
 .save_seiza{
-    width: 40%;
+    width: 50%;
     /* margin-right: 8%; */
     /* margin-left: 3%; */
     border: solid;
@@ -332,7 +349,7 @@ ul {
 }
 
 .save_B{
-    width: 40%;
+    width: 50%;
     /* margin-right: 70%; */
     margin-left: 4%;
     border: solid;
@@ -351,6 +368,20 @@ ul {
 
 .text_3{
     text-align: center;
+}
+
+.text_3_a{
+    width: 55%;
+}
+
+.text_3_b{
+    width: 55%;
+}
+
+.save_4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .timer {
